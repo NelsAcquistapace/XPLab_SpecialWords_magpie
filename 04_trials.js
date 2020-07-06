@@ -2,8 +2,8 @@
 
 let correctLabelCombinations = [];
 let congruentSoundCombinations = [];
-let incongruentSoundCombinations;
-let incorrectCombinations;
+let incongruentSoundCombinations = [];
+let incorrectCombinations = [];
 
 let categories = ["bird", "drum", "motorcycle", "dog", "phone", "guitar"];
 let subcategory = [["owl", "sparrow"], ["bongo", "kit"], ["big", "small"], ["labmix", "poodle"], ["cell", "rotary"], ["electric", "acoustic"]];
@@ -65,6 +65,28 @@ for (let x1 = 0; x1 < labelString.length; x1++) {
     }
 }
 
+// creating an array with all congruent sound-image combinations
+let imagePosCon;
+let imagePosIncon;
+
+for (let y1 = 0; y1 < soundString.length; y1++) {
+    imagePosCon = y1*2;
+    imagePosIncon = imagePosCon;
+    
+    if (y1 % 2 == 1) {
+        imagePosCon -= 1;
+    } else {
+        imagePosIncon += 3;
+    }
+
+    // all congruent combinations
+    congruentSoundCombinations.push([soundString[y1], imageString[imagePosCon]]);
+    congruentSoundCombinations.push([soundString[y1], imageString[imagePosCon+2]]);
+
+    // all incongruent combinations
+    incongruentSoundCombinations.push([soundString[y1], imageString[imagePosIncon-2]]);
+    incongruentSoundCombinations.push([soundString[y1], imageString[imagePosIncon]]);
+}
 
 const practice_trials = {
     key_press: [
