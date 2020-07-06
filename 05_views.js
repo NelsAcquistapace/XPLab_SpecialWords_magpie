@@ -1,75 +1,36 @@
-// In this file you can instantiate your views
-// We here first instantiate wrapping views, then the trial views
-
-
-/** Wrapping views below
-
-* Obligatory properties
-
-    * trials: int - the number of trials this view will appear
-    * name: string
-
-*Optional properties
-    * buttonText: string - the text on the button (default: 'next')
-    * text: string - the text to be displayed in this view
-    * title: string - the title of this view
-
-    * More about the properties and functions of the wrapping views - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/01_template_views/#wrapping-views
-
-*/
 
 // Every experiment should start with an intro view. Here you can welcome your participants and tell them what the experiment is about
 const intro = magpieViews.view_generator("intro", {
   trials: 1,
   name: 'intro',
   // If you use JavaScripts Template String `I am a Template String`, you can use HTML <></> and javascript ${} inside
-  text: `This is a <strong>cool</strong> scientific experiment.
-            <br />
-            <br />
-            Do not wait any longer and start!
-            <br />
-            `,
-  buttonText: 'go to instructions'
+  text:   `Thank you for joining our experiment.`,
+  buttonText: 'Begin the experiment'
 });
 
 // For most tasks, you need instructions views
-const instructions = magpieViews.view_generator("instructions", {
+const instructions_practice = magpieViews.view_generator("instructions", {
   trials: 1,
-  name: 'instructions1',
+  name: 'instructions_practice',
   title: 'General Instructions',
-  text: `You will be shown pictures in which are two objects.
-                  <br />
-                  Your task is to dertermine if these two objects are the same or if they are different.
-                  <br />
-                  If they are the same hit the <strong>f</strong> button on your keyborad.
-                  <br />
-                  If they are different hit the <strong>j</strong> button on your keyboard.
-                  <br />
-                  Please be as fast and accurate as possible.
-                  <br />
-                  <br />
-                  You will start with some practice trials.
-                  `,
-
-  buttonText: 'next'
+  text:  `You will see pictures showing pairs of geometrical objects. Your task is to compare both objects in the pair and decide whether they are the same or different. You will need press button "F" if you think the objects are the same, and "J" if you think they are different. Please try to answer as quick and accurately as possible!
+            <br />
+            <br />
+            We will practice this first.`,
+  buttonText: 'go to practice'
 });
 
-const begin_screen = magpieViews.view_generator("begin", {
+const instructions_main = magpieViews.view_generator("instructions", {
   trials: 1,
-  name: "begin_screen",
-  title: "Now the experiment will start",
-  text: `Remeber:
-                  <br />
-                  If the objects are the same hit the <strong>f</strong> button on your keyborad.
-                  <br />
-                  If the objects are different hit the <strong>j</strong> button on your keyboard.
-                  <br />
-                  Please be as fast and as accurate as possible.`,
-  buttonText: "begin the experiment"
-})
+  name: 'instructions_main',
+  title: 'Get ready for the main experiment',
+  text:  `After having practiced, we will now proceed to the main experiment. Please try to answer as quickly and accurately as possible!`,
+  buttonText: 'begin'
+});
+
 
 // In the post test questionnaire you can ask your participants addtional questions
-const post_test = magpieViews.view_generator("post_test", {
+const postTest = magpieViews.view_generator("post_test", {
   trials: 1,
   name: 'post_test',
   title: 'Additional information',
@@ -101,42 +62,54 @@ const thanks = magpieViews.view_generator("thanks", {
 
 /** trial (magpie's Trial Type Views) below
 
-* Obligatory properties
+ * Obligatory properties
 
-    - trials: int - the number of trials this view will appear
-    - name: string - the name of the view type as it shall be known to _magpie (e.g. for use with a progress bar)
-            and the name of the trial as you want it to appear in the submitted data
-    - data: array - an array of trial objects
+ - trials: int - the number of trials this view will appear
+ - name: string - the name of the view type as it shall be known to _magpie (e.g. for use with a progress bar)
+ - trial_type: string - the name of the trial type as you want it to appear in the submitted data
+ - data: array - an array of trial objects
 
-* Optional properties
+ * Optional properties
 
-    - pause: number (in ms) - blank screen before the fixation point or stimulus show
-    - fix_duration: number (in ms) - blank screen with fixation point in the middle
-    - stim_duration: number (in ms) - for how long to have the stimulus on the screen
-      More about trial life cycle - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/04_lifecycles_hooks/
+ - pause: number (in ms) - blank screen before the fixation point or stimulus show
+ - fix_duration: number (in ms) - blank screen with fixation point in the middle
+ - stim_duration: number (in ms) - for how long to have the stimulus on the screen
+ More about trial life cycle - https://github.com/magpie-project/magpie-project/blob/master/docs/views.md#trial-views-lifecycle
 
-    - hook: object - option to hook and add custom functions to the view
-      More about hooks - https://magpie-ea.github.io/magpie-docs/01_designing_experiments/04_lifecycles_hooks/
+ - hook: object - option to hook and add custom functions to the view
+ More about hooks - https://github.com/magpie-project/magpie-project/blob/master/docs/views.md#trial-views-hooks
 
-* All about the properties of trial views
-* https://magpie-ea.github.io/magpie-docs/01_designing_experiments/01_template_views/#trial-views
-*/
+ * All about the properties of trial - https://github.com/magpie-project/magpie-project/blob/master/docs/views.md#properties-of-trial
+ */
 
-
-const practice_experiment = magpieViews.view_generator("key_press", {
+// Here, we initialize a keyPress task
+const practice = custom_views.keypress_rotation_practice({
   trials: 12,
-  name: "practice_experiment",
-  pause: 250,
-  data: _.shuffle(main_experiment_trials.key_press),
+  // trials: 2,
+  name: 'practice',
+  trial_type: 'practice',
+  fix_duration: 250,
+  data: _.shuffle(practice_trials.key_press),
+  key1: "f",
+  key2: "j",
+  f: "same",
+  j: "different",
 });
 
-const main_experiment = magpieViews.view_generator("key_press", {
+
+const main = custom_views.keypress_rotation_main({
   trials: 48,
-  name: "main_experiment",
-  pause: 250,
-  data: _.shuffle(main_experiment_trials.key_press),
+  // trials: 8,
+  name: 'main',
+  trial_type: 'main',
+  pause: 500,
+  fix_duration: 1500,
+  data: _.shuffle(main_trials.key_press),
+  key1: "f",
+  key2: "j",
+  f: "same",
+  j: "different",
 });
 
 // There are many more templates available:
-// forced_choice, slider_rating, dropdown_choice, testbox_input, rating_scale, image_selection, sentence_choice,
-// key_press, self_paced_reading and self_paced_reading_rating_scale
+// forcedChoice, sliderRating, dropdownChoice, testboxInput, ratingScale, imageSelection, sentenceChoice, keyPress, selfPacedReading and selfPacedReading_ratingScale

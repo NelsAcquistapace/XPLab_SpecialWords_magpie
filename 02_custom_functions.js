@@ -16,7 +16,7 @@ const coin = _.sample(["head", "tail"]); // You can determine global (random) pa
 
 
 /* For generating random participant IDs */
-    // https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
+// https://stackoverflow.com/questions/1349404/generate-random-string-characters-in-javascript
 // dec2hex :: Integer -> String
 const dec2hex = function(dec) {
     return ("0" + dec.toString(16)).substr(-2);
@@ -44,7 +44,7 @@ const time_limit = function(data, next) {
     // Add timeouts to the timeoutarray
     // Reminds the participant to respond after 5 seconds
     window.timeout.push(setTimeout(function(){
-          $('#reminder').text('Please answer more quickly!');
+        $('#reminder').text('Please answer more quickly!');
     }, 5000));
     next();
 };

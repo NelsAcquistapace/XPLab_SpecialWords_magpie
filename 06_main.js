@@ -16,32 +16,32 @@ $("document").ready(function() {
         // You have to specify all views you want to use in this experiment and the order of them
         views_seq: [
             intro,
-            instructions,
-            practice_experiment,
-            begin_screen,
-            main_experiment,
-            post_test,
+            instructions_practice,
+            practice,
+            instructions_main,
+            main,
+            postTest,
             thanks,
         ],
         // Here, you can specify all information for the deployment
         deploy: {
-            experimentID: "126",
+            experimentID: "INSERT_A_NUMBER",
             serverAppURL: "https://magpie-demo.herokuapp.com/api/submit_experiment/",
             // Possible deployment methods are:
             // "debug" and "directLink"
             // As well as "MTurk", "MTurkSandbox" and "Prolific"
             deployMethod: "debug",
-            contact_email: "nels.a@web.de",
+            contact_email: "YOUREMAIL@wherelifeisgreat.you",
             prolificURL: "https://app.prolific.ac/submissions/complete?cc=SAMPLE1234"
         },
         // Here, you can specify how the progress bar should look like
         progress_bar: {
             in: [
                 // list the view-names of the views for which you want a progress bar
-                main_experiment.name,
-                practice_experiment.name,
+                practice.name,
+                main.name
             ],
-             // Possible styles are "default", "separate" and "chunks"
+            // Possible styles are "default", "separate" and "chunks"
             style: "separate",
             width: 100
         }
