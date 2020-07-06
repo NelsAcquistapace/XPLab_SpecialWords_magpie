@@ -135,91 +135,93 @@ for(let i = 0; i < incorrectLabelCombinations.length; i++) {
 console.log(congruentSoundCombinations[0][0]);
 console.log(congruentSoundCombinations[0][1]);
 
+let bird = ["bird"];
+
 // ------------------------------------------------------------------------------------
 
 
 const practice_trials = {
     key_press: [
         {
-            picture: congruentSoundCombinations[0][0],
-            sound: congruentSoundCombinations[0][1],
+            picture: congruentSoundCombinations[0][1],
+            sound: congruentSoundCombinations[0][0],
             item: 13,
             expected: "same",
             angle: 50,
         },
         {
-            picture: congruentSoundCombinations[1][0],
-            sound: congruentSoundCombinations[1][1],
+            picture: congruentSoundCombinations[1][1],
+            sound: congruentSoundCombinations[1][0],
             item: 13,
             expected: "same",
             angle: 50,
         },
         {
-            picture: congruentSoundCombinations[2][0],
-            sound: congruentSoundCombinations[2][1],
+            picture: congruentSoundCombinations[2][1],
+            sound: congruentSoundCombinations[2][0],
             item: 13,
             expected: "same",
             angle: 50,
         },
         {
-            picture: congruentSoundCombinations[3][0],
-            sound: congruentSoundCombinations[3][1],
+            picture: congruentSoundCombinations[3][1],
+            sound: congruentSoundCombinations[3][0],
             item: 13,
             expected: "same",
             angle: 50,
         },
         {
-            picture: congruentSoundCombinations[4][0],
-            sound: congruentSoundCombinations[4][1],
+            picture: congruentSoundCombinations[4][1],
+            sound: congruentSoundCombinations[4][0],
             item: 13,
             expected: "same",
             angle: 50,
         },
         {
-            picture: congruentSoundCombinations[5][0],
-            sound: congruentSoundCombinations[5][1],
+            picture: congruentSoundCombinations[5][1],
+            sound: congruentSoundCombinations[5][0],
             item: 13,
             expected: "same",
             angle: 50,
         },
         {
-            picture: congruentSoundCombinations[6][0],
-            sound: congruentSoundCombinations[6][1],
+            picture: congruentSoundCombinations[6][1],
+            sound: congruentSoundCombinations[6][0],
             item: 13,
             expected: "same",
             angle: 50,
         },
         {
-            picture: congruentSoundCombinations[7][0],
-            sound: congruentSoundCombinations[7][1],
+            picture: congruentSoundCombinations[7][1],
+            sound: congruentSoundCombinations[7][0],
             item: 13,
             expected: "same",
             angle: 50,
         },
         {
-            picture: congruentSoundCombinations[8][0],
-            sound: congruentSoundCombinations[8][1],
+            picture: congruentSoundCombinations[8][1],
+            sound: congruentSoundCombinations[8][0],
             item: 13,
             expected: "same",
             angle: 50,
         },
         {
-            picture: congruentSoundCombinations[9][0],
-            sound: congruentSoundCombinations[9][1],
+            picture: congruentSoundCombinations[9][1],
+            sound: congruentSoundCombinations[9][0],
             item: 13,
             expected: "same",
             angle: 50,
         },
         {
-            picture: congruentSoundCombinations[10][0],
-            sound: congruentSoundCombinations[10][1],
+            picture: congruentSoundCombinations[10][1],
+            sound: congruentSoundCombinations[10][0],
             item: 13,
             expected: "same",
             angle: 50,
         },
         {
-            picture: congruentSoundCombinations[11][0],
-            sound: congruentSoundCombinations[11][1],
+            picture: congruentSoundCombinations[11][1],
+            sound: congruentSoundCombinations[11][0],
             item: 13,
             expected: "same",
             angle: 50,
