@@ -35,6 +35,7 @@ custom_views.keypress_rotation_practice = function(config) {
                         <div class='magpie-view-stimulus magpie-nodisplay'></div>
                     </div>
                 </div>`;
+
             const answerContainerElem = `<div class='magpie-view-answer-container'>
                         <p class='magpie-view-question'>${question}</p>
                           </div>`;
@@ -59,12 +60,15 @@ custom_views.keypress_rotation_practice = function(config) {
                         // show feedback (for practice trial only)
                         $(".magpie-view-stimulus").addClass("magpie-invisible");
                         $('#feedback').text('Correct!');
-
+                        var audio = new Audio("feedback_sounds/bleep.wav");
+                        audio.play();
                     } else {
                         correctness = "incorrect";
                         // show feedback (for practice trial only)
                         $(".magpie-view-stimulus").addClass("magpie-invisible");
                         $('#feedback').text('Incorrect!');
+                        var audio = new Audio("feedback_sounds/buzz.wav");
+                        audio.play();
                     }
 
                     const trial_data = {
