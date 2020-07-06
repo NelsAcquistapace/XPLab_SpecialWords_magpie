@@ -1,13 +1,70 @@
 // In this file you can specify the trial data for your experiment
 
-let correctLabelCombinations;
-let congruentSoundCombinations;
+let correctLabelCombinations = [];
+let congruentSoundCombinations = [];
 let incongruentSoundCombinations;
 let incorrectCombinations;
 
-// Constructing the congruent combinations of labels and images
-// In total: For every label there are four pictures
-for ()
+let categories = ["bird", "drum", "motorcycle", "dog", "phone", "guitar"];
+let subcategory = [["owl", "sparrow"], ["bongo", "kit"], ["big", "small"], ["labmix", "poodle"], ["cell", "rotary"], ["electric", "acoustic"]];
+let gender = ["female", "male"];
+let index = ["1", "1", "2", "2"];
+
+let labelString = [];
+let imageString = [];
+let soundString = [];
+
+// Creates Array containing all label paths
+for (let i1 = 0; i1 < 6; i1++) {
+    for (let i2 = 0; i2 < 2; i2++) {
+        labelString.push("labels/" + categories[i1] + "_" + gender[i2] + ".wav");
+    }
+}
+
+// Creates Array containing all image paths
+for (let j = 0; j < 24; j++) {
+    let cat = Math.round((j/4)-0.5);
+    imageString.push("images/" + categories[cat] + "_" + subcategory[cat][j%2] + "_" + index[j%4] + ".jpg");
+}
+
+// Creates Array containing all sound paths
+for (let k1 = 0; k1 < 6; k1++) {
+    for (let k2 = 0; k2 < 2; k2++){
+        soundString.push("sounds/" + categories[k1] + "_" + subcategory[k1][k2] + ".wav");
+    }
+}
+
+// Creating the Array "correctLabelCombinations": Contains all matching combinations of 
+// labels and images. Every label can be combined with exactly four pictures to create a 
+// correct match -> 48 combinations (2 labels per category, 4 pictures per category)
+let x3;
+let x4;
+let counter;
+
+// Find correct combination for each of the labelString-entries:
+for (let x1 = 0; x1 < labelString.length; x1++) {
+    x3 = Math.round((x1/2)-0.5);
+    counter = 0;
+    
+    // TODO das dauert, redundanter code, nochmal drueberschauen fuer bessere Idee
+    for (let x2 = 0; x2 < 24; x2++) {
+        x4 = Math.round((x2/4)-0.5);
+        
+        // if label and image are a "matching" combination, push them to the array
+        if (x3 == x4) {
+            correctLabelCombinations.push([labelString[x1], imageString[x2]]);
+            counter += 1;
+        }
+        
+        // inner for-loop can be terminated early once 4 combinations for each label 
+        // have been found
+        if (counter >= 4) {
+            break;
+        }
+        
+    }
+}
+
 
 const practice_trials = {
     key_press: [
