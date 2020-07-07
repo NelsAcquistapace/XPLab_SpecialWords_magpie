@@ -13,7 +13,13 @@ const instructions_practice = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_practice',
   title: 'General Instructions',
-  text:  `You will see pictures showing pairs of geometrical objects. Your task is to compare both objects in the pair and decide whether they are the same or different. You will need press button "F" if you think the objects are the same, and "J" if you think they are different. Please try to answer as quick and accurately as possible!
+  text:  `You will hear sounds/labels of everyday things. After the sound you will see a picture with a everyday thing. Decide weather the sound and the picture represent the <strong>same category of object</strong>.
+            <br />
+            If they represent the same category hit the <strong>f</strong> button.
+            <br />
+            If they represent a different category hit the <strong>j</strong> button.
+            <br />
+            Please try to answer as quick and accurately as possible!
             <br />
             <br />
             We will practice this first.`,
