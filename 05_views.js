@@ -113,7 +113,7 @@ const main = custom_views.keypress_rotation_main({
   name: 'main',
   trial_type: 'main',
   pause: 500,
-  fix_duration: 1500,
+  fix_duration: 2500,
   data: _.shuffle(trial_info.main),
   key1: "y",
   key2: "n",
