@@ -40,8 +40,8 @@ for (let k1 = 0; k1 < subcategory.length; k1++) {
     }
 }
 
-// Creating the Array "correctLabelCombinations": Contains all matching combinations of 
-// labels and images. Every label can be combined with exactly four pictures to create a 
+// Creating the Array "correctLabelCombinations": Contains all matching combinations of
+// labels and images. Every label can be combined with exactly four pictures to create a
 // correct match -> 48 combinations (2 labels per category, 4 pictures per category)
 let x3;
 let x4;
@@ -49,22 +49,22 @@ let x4;
 // Find correct combination for each of the labelString-entries:
 for (let x1 = 0; x1 < labelPaths.length; x1++) {
     x3 = Math.round((x1/2)-0.5);
-    
+
     // TODO das dauert, redundanter code, nochmal drueberschauen fuer bessere Idee
     for (let x2 = 0; x2 < 24; x2++) {
         x4 = Math.round((x2/4)-0.5);
-        
+
         // if label and image are a "matching" combination, push them to the array
         if (x3 === x4) {
-            
+
             correctLabelCombinations.push([labelPaths[x1], imagePaths[x2]]);
-            
-        } else { 
-            
+
+        } else {
+
             // all incorrect label-image combinations (240)
             incorrectLabelCombinations.push([labelPaths[x1], imagePaths[x2]]);
         }
-        
+
     }
 }
 
@@ -75,41 +75,41 @@ let imagePosIncon;
 for (let y1 = 0; y1 < soundPaths.length; y1++) {
     imagePosCon = y1*2;
     imagePosIncon = imagePosCon;
-    
+
     if (y1 % 2 === 1) {
         imagePosCon -= 1;
     } else {
         imagePosIncon += 3;
     }
-        
+
     for (let y2 = 0; y2 < imagePaths.length; y2++) {
-        
+
         if (y2 === imagePosCon || y2 === imagePosCon+2) {
-            
+
             // all congruent combinations
             congruentSoundCombinations.push([soundPaths[y1], imagePaths[y2]]);
-            
+
         } else if (y2 === imagePosIncon || y2 === imagePosIncon-2) {
-            
+
             // all incongruent combinations
             incongruentSoundCombinations.push([soundPaths[y1], imagePaths[y2]]);
-            
+
         } else {
-            
+
             // all incorrect sound-image combinations (240)
             incorrectSoundCombinations.push([soundPaths[y1], imagePaths[y2]]);
         }
     }
 }
 
-// Function that takes an array and shuffles it (this function is used to avoid 
+// Function that takes an array and shuffles it (this function is used to avoid
 // regularities in the incorrect trials)
 function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
 }
 
 // Only 48 incorrect label-image and 48 incorrect sound-image combinations needed.
-// Shuffle arrays (240 entries each) first, then slice such that 48 combinations 
+// Shuffle arrays (240 entries each) first, then slice such that 48 combinations
 // remain in each array.
 shuffle(incorrectLabelCombinations);
 incorrectLabelCombinations = incorrectLabelCombinations.slice(40,88);

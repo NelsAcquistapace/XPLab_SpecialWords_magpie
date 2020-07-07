@@ -21,10 +21,14 @@ custom_views.keypress_rotation_practice = function(config) {
             const value2 = config[key2];
 
             // -------------------------------------------
-            var audio = new Audio(config.data[CT].sound);
-            if (config.data[CT].sound !== undefined) {
-                audio.play();
-            }
+            // sound will be played 750ms after a new view is showing
+            // this is exactly after when die fixation cross (duration 250ms + pause 500ms) disappears
+            setTimeout(() => {
+              var audio = new Audio(config.data[CT].sound);
+              if (config.data[CT].sound !== undefined) {
+                  audio.play();
+              }
+            }, 750);
             // -------------------------------------------
 
             const viewTemplate = `<div class="magpie-view">
@@ -59,7 +63,7 @@ custom_views.keypress_rotation_practice = function(config) {
                         correctness = "correct";
                         // show feedback (for practice trial only)
                         $(".magpie-view-stimulus").addClass("magpie-invisible");
-                        $('#feedback').text('Correct!');
+                        $('#feedback').text('Correct!111111111111111111111');
                         var audio = new Audio("feedback_sounds/bleep.wav");
                         audio.play();
                     } else {

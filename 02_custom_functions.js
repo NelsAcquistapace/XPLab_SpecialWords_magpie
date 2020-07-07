@@ -31,10 +31,26 @@ const generateID = function(len) {
 
 
 
-/* Hooks  
+/* Hooks
 *
 *
 */
+
+// create a pause ofter the fixation point is shown
+// after this pause the picture will be shown
+// ERROR: theoretical timing is correcly calculated, timing of the output is different though!
+// slide appears:
+// 500ms pause
+// 250ms fix cross
+// 1500ms sound
+// 1000ms pause
+// = 3250ms
+// as this is hoocked after fix_point its -750ms
+// = 2500ms
+const after_fix_pause = function(data, next) {
+setTimeout(() => {  next() }, 2500);
+}
+
 
 // Error feedback if participants exceeds the time for responding
 const time_limit = function(data, next) {
