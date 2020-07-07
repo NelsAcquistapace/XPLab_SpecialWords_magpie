@@ -54,7 +54,14 @@ custom_views.keypress_rotation_practice = function(config) {
 
                 if (keyPressed === key1 || keyPressed === key2) {
                     let correctness;
-                    const RT = Date.now() - startingTime; // measure RT before anything else
+                    // -------------------------------------------
+                    // subtract 2350ms from return
+                    // 500ms pause
+                    // 250ms fixation cross
+                    // 600ms .wav played
+                    // 1000ms pause
+                    // -------------------------------------------
+                    const RT = Date.now() - startingTime - 2350; // measure RT before anything else
 
                     if (
                         config.data[CT].expected ===
@@ -63,7 +70,7 @@ custom_views.keypress_rotation_practice = function(config) {
                         correctness = "correct";
                         // show feedback (for practice trial only)
                         $(".magpie-view-stimulus").addClass("magpie-invisible");
-                        $('#feedback').text('Correct!111111111111111111111');
+                        $('#feedback').text('Correct!');
                         var audio = new Audio("feedback_sounds/bleep.wav");
                         audio.play();
                     } else {
