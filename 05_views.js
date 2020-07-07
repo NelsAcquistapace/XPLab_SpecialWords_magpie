@@ -90,7 +90,7 @@ const thanks = magpieViews.view_generator("thanks", {
 
 // Here, we initialize a keyPress task
 const practice = custom_views.keypress_rotation_practice({
-  trials: 12,
+  trials: 6,
   // trials: 2,
   name: 'practice',
   trial_type: 'practice',
@@ -99,26 +99,26 @@ const practice = custom_views.keypress_rotation_practice({
   hook: {
         after_fix_point: after_fix_pause
   },
-  data: _.shuffle(practice_trials.key_press),
-  key1: "f",
-  key2: "j",
-  f: "same",
-  j: "different",
+  data: _.shuffle(trial_info.practice),
+  key1: "y",
+  key2: "n",
+  y: "match",
+  n: "no match",
 });
 
 
 const main = custom_views.keypress_rotation_main({
-  trials: 48,
+  trials: 384,
   // trials: 8,
   name: 'main',
   trial_type: 'main',
   pause: 500,
   fix_duration: 1500,
-  data: _.shuffle(main_trials.key_press),
-  key1: "f",
-  key2: "j",
-  f: "same",
-  j: "different",
+  data: _.shuffle(trial_info.main),
+  key1: "y",
+  key2: "n",
+  y: "match",
+  n: "no match",
 });
 
 // There are many more templates available:

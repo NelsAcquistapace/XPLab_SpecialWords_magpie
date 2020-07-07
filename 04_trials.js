@@ -132,400 +132,76 @@ for(let i = 0; i < correctLabelCombinations.length; i++) {
 for(let i = 0; i < incorrectLabelCombinations.length; i++) {
     //console.log(incorrectLabelCombinations[i]);
 }
-console.log(congruentSoundCombinations[0][0]);
-console.log(congruentSoundCombinations[0][1]);
-
-let bird = ["bird"];
+//console.log(congruentSoundCombinations[0][0]);
+//console.log(congruentSoundCombinations[0][1]);
 
 // ------------------------------------------------------------------------------------
 
+// function to create trial-arrays
+const get_trials = function(start, end, array, congruenceInfo) {
+    let correctness = "match";
+    
+    // Change correctness-value if the trial is constructed from one of the array 
+    // containing non-matching (incorrect) combinations.
+    if (congruenceInfo === "sound_incorrect" || congruenceInfo === "label_incorrect") {
+        correctness = "no match";
+    }
+    
+    const trial_array = [];
 
-const practice_trials = {
-    key_press: [
-        {
-            picture: congruentSoundCombinations[0][1],
-            sound: congruentSoundCombinations[0][0],
-            item: 13,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: congruentSoundCombinations[1][1],
-            sound: congruentSoundCombinations[1][0],
-            item: 13,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: congruentSoundCombinations[2][1],
-            sound: congruentSoundCombinations[2][0],
-            item: 13,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: congruentSoundCombinations[3][1],
-            sound: congruentSoundCombinations[3][0],
-            item: 13,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: congruentSoundCombinations[4][1],
-            sound: congruentSoundCombinations[4][0],
-            item: 13,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: congruentSoundCombinations[5][1],
-            sound: congruentSoundCombinations[5][0],
-            item: 13,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: congruentSoundCombinations[6][1],
-            sound: congruentSoundCombinations[6][0],
-            item: 13,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: congruentSoundCombinations[7][1],
-            sound: congruentSoundCombinations[7][0],
-            item: 13,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: congruentSoundCombinations[8][1],
-            sound: congruentSoundCombinations[8][0],
-            item: 13,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: congruentSoundCombinations[9][1],
-            sound: congruentSoundCombinations[9][0],
-            item: 13,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: congruentSoundCombinations[10][1],
-            sound: congruentSoundCombinations[10][0],
-            item: 13,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: congruentSoundCombinations[11][1],
-            sound: congruentSoundCombinations[11][0],
-            item: 13,
-            expected: "same",
-            angle: 50,
-        },
-    ],
+    for (let i = start; i < end; i++) {
+
+        // Each trial consists of a picture and a sound. The correctness-value is used 
+        // for the participant to receive feedback. The information on the congruence 
+        // is important for later data analysis.
+        var trial = {
+            sound: array[i][0],
+            picture: array[i][1],
+            congruence: congruenceInfo,
+            expected: correctness,
+        };
+
+        trial_array.push(trial);
+    }
+
+    return trial_array;
 };
 
-const main_trials = {
-    key_press: [
-        {
-            picture: "images/main/1_50_same.jpg",
-            item: 1,
-            expected: "same",
-            angle: 50,
+// CONSTRUCT MAIN TRIALS 
+// Start by creating trial-arrays for each of the possible "combination-arrays" 
+// (different types of congruence, correctness) respectively:
 
-        },
-        {
-            picture: "images/main/1_50_different.jpg",
-            item: 1,
-            expected: "different",
-            angle: 50,
+// t1: 24 matching sound-image combinations (congruent)
+// t2: 24 matching sound-image combinations (incongruent)
+// t3: 48 matching label-image combinations
+// t4: 48 non-matching sound-image combinations
+// t5: 48 non-matching label-image combinations
+let t1 = get_trials(0, congruentSoundCombinations.length, congruentSoundCombinations, "congruent");
+let t2 = get_trials(0, incongruentSoundCombinations.length, incongruentSoundCombinations, "incongruent");
+let t3 = get_trials(0, correctLabelCombinations.length, correctLabelCombinations, "label_correct");
+let t4 = get_trials(0, incorrectSoundCombinations.length, incorrectSoundCombinations, "sound_incorrect");
+let t5 = get_trials(0, incorrectLabelCombinations.length, incorrectLabelCombinations, "label_incorrect");
 
-        },
-        {
-            picture: "images/main/1_150_same.jpg",
-            item: 1,
-            expected: "same",
-            angle: 150,
-        },
-        {
-            picture: "images/main/1_150_different.jpg",
-            item: 1,
-            expected: "different",
-            angle: 150,
-        },
-        {
-            picture: "images/main/2_50_same.jpg",
-            item: 2,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: "images/main/2_50_different.jpg",
-            item: 2,
-            expected: "different",
-            angle: 50,
-        },
-        {
-            picture: "images/main/2_150_same.jpg",
-            item: 2,
-            expected: "same",
-            angle: 150,
-        },
-        {
-            picture: "images/main/2_150_different.jpg",
-            item: 2,
-            expected: "different",
-            angle: 150,
-        },
+// Merge all possible combinations. This creates an array with 192 different trials.
+let trials = t1.concat(t2.concat(t3.concat(t4.concat(t5))));
 
-        {
-            picture: "images/main/3_50_same.jpg",
-            item: 3,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: "images/main/3_50_different.jpg",
-            item: 3,
-            expected: "different",
-            angle: 50,
-        },
-        {
-            picture: "images/main/3_150_same.jpg",
-            item: 3,
-            expected: "same",
-            angle: 150,
-        },
-        {
-            picture: "images/main/3_150_different.jpg",
-            item: 3,
-            expected: "different",
-            angle: 150,
-        },
+// Each combination is tested twice. Therefore, concatenate trials with itself. This 
+// constructs 384 trials.
+trials = trials.concat(trials);
 
-        {
-            picture: "images/main/4_50_same.jpg",
-            item: 4,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: "images/main/4_50_different.jpg",
-            item: 4,
-            expected: "different",
-            angle: 50,
-        },
-        {
-            picture: "images/main/4_150_same.jpg",
-            item: 4,
-            expected: "same",
-            angle: 150,
-        },
-        {
-            picture: "images/main/4_150_different.jpg",
-            item: 4,
-            expected: "different",
-            angle: 150,
-        },
 
-        {
-            picture: "images/main/5_50_same.jpg",
-            item: 5,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: "images/main/5_50_different.jpg",
-            item: 5,
-            expected: "different",
-            angle: 50,
-        },
-        {
-            picture: "images/main/5_150_same.jpg",
-            item: 5,
-            expected: "same",
-            angle: 150,
-        },
-        {
-            picture: "images/main/5_150_different.jpg",
-            item: 5,
-            expected: "different",
-            angle: 150,
-        },
-        {
-            picture: "images/main/6_50_same.jpg",
-            item: 6,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: "images/main/6_50_different.jpg",
-            item: 6,
-            expected: "different",
-            angle: 50,
-        },
-        {
-            picture: "images/main/6_150_same.jpg",
-            item: 6,
-            expected: "same",
-            angle: 150,
-        },
-        {
-            picture: "images/main/6_150_different.jpg",
-            item: 6,
-            expected: "different",
-            angle: 150,
-        },
+//console.log(trials.length);
 
-        {
-            picture: "images/main/7_50_same.jpg",
-            item: 7,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: "images/main/7_50_different.jpg",
-            item: 7,
-            expected: "different",
-            angle: 50,
-        },
-        {
-            picture: "images/main/7_150_same.jpg",
-            item: 7,
-            expected: "same",
-            angle: 150,
-        },
-        {
-            picture: "images/main/7_150_different.jpg",
-            item: 7,
-            expected: "different",
-            angle: 150,
-        },
 
-        {
-            picture: "images/main/8_50_same.jpg",
-            item: 8,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: "images/main/8_50_different.jpg",
-            item: 8,
-            expected: "different",
-            angle: 50,
-        },
-        {
-            picture: "images/main/8_150_same.jpg",
-            item: 8,
-            expected: "same",
-            angle: 150,
-        },
-        {
-            picture: "images/main/8_150_different.jpg",
-            item: 8,
-            expected: "different",
-            angle: 150,
-        },
+// CONSTRUCT PRACTICE TRIALS
+// Takes trial-info from previously defined trial-arrays t1-t5. Practice trials should 
+// include 3 matching combinations and 3 non-matching combinations.
+let practice_trials = [t1[0], t2[0], t3[0], t4[0], t5[0], t5[5]];
 
-        {
-            picture: "images/main/9_50_same.jpg",
-            item: 9,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: "images/main/9_50_different.jpg",
-            item: 9,
-            expected: "different",
-            angle: 50,
-        },
-        {
-            picture: "images/main/9_150_same.jpg",
-            item: 9,
-            expected: "same",
-            angle: 150,
-        },
-        {
-            picture: "images/main/9_150_different.jpg",
-            item: 9,
-            expected: "different",
-            angle: 150,
-        },
-        {
-            picture: "images/main/10_50_same.jpg",
-            item: 10,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: "images/main/10_50_different.jpg",
-            item: 10,
-            expected: "different",
-            angle: 50,
-        },
-        {
-            picture: "images/main/10_150_same.jpg",
-            item: 10,
-            expected: "same",
-            angle: 150,
-        },
-        {
-            picture: "images/main/10_150_different.jpg",
-            item: 10,
-            expected: "different",
-            angle: 150,
-        },
-        {
-            picture: "images/main/11_50_same.jpg",
-            item: 11,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: "images/main/11_50_different.jpg",
-            item: 11,
-            expected: "different",
-            angle: 50,
-        },
-        {
-            picture: "images/main/11_150_same.jpg",
-            item: 11,
-            expected: "same",
-            angle: 150,
-        },
-        {
-            picture: "images/main/11_150_different.jpg",
-            item: 11,
-            expected: "different",
-            angle: 150,
-        },
-        {
-            picture: "images/main/12_50_same.jpg",
-            item: 12,
-            expected: "same",
-            angle: 50,
-        },
-        {
-            picture: "images/main/12_50_different.jpg",
-            item: 12,
-            expected: "different",
-            angle: 50,
-        },
-        {
-            picture: "images/main/12_150_same.jpg",
-            item: 12,
-            expected: "same",
-            angle: 150,
-        },
-        {
-            picture: "images/main/12_150_different.jpg",
-            item: 12,
-            expected: "different",
-            angle: 150,
-        },
-    ],
+
+const trial_info = {
+    
+    practice: practice_trials,
+    main: trials,
+    
 };
