@@ -9,15 +9,40 @@ const intro = magpieViews.view_generator("intro", {
 });
 
 // For most tasks, you need instructions views
-const instructions_practice = magpieViews.view_generator("instructions", {
+const instructions_practice_1 = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_practice',
   title: 'General Instructions',
-  text:  `You will hear sounds/labels of everyday things. After the sound you will see a picture with a everyday thing. Decide weather the sound and the picture represent the <strong>same category of object</strong>.
+  text:  `This experiment requires your full visual and auditory attention.
             <br />
-            If they represent the same category hit the <strong>f</strong> button.
+            If you can, please use headphones. If not, make sure to have good audio in some other way.
             <br />
-            If they represent a different category hit the <strong>j</strong> button.
+            <br />`,
+  buttonText: 'next'
+});
+
+const instructions_practice_2 = magpieViews.view_generator("instructions", {
+  trials: 1,
+  name: 'instructions_practice',
+  title: 'General Instructions',
+  text:  `In this experiment you will first hear a sound. This is either a spoken word, the label of an object, or a sound, which is made by an object.
+            <br />
+            Afterwards you will see a image of an object.
+            <br />
+            Decide whether the sound and the image represent the same high-levle-category of an object.
+            <br />
+            <br />`,
+  buttonText: 'next'
+});
+
+const instructions_practice_3 = magpieViews.view_generator("instructions", {
+  trials: 1,
+  name: 'instructions_practice',
+  title: 'General Instructions',
+  text:  `
+            If they represent the same high-level-category hit the <strong>y</strong> button.
+            <br />
+            If they represent a different high-level-category hit the <strong>n</strong> button.
             <br />
             Please try to answer as quick and accurately as possible!
             <br />

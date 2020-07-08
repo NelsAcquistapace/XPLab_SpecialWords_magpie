@@ -16,7 +16,9 @@ $("document").ready(function() {
         // You have to specify all views you want to use in this experiment and the order of them
         views_seq: [
             intro,
-            instructions_practice,
+            instructions_practice_1,
+            instructions_practice_2,
+            instructions_practice_3,
             practice,
             instructions_main,
             main,
