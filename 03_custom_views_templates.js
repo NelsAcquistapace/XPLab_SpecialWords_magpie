@@ -33,7 +33,9 @@ custom_views.keypress_special_words = function(config) {
 
             const viewTemplate = `<div class="magpie-view">
                     <h1 class='magpie-view-title'>${this.title}</h1>
-                    <div class='magpie-view-stimulus-container' style="height: 500px; width: 500px;">
+                    <p class='magpie-response-keypress-header'><strong>${key1}</strong> = ${value1}, <strong>${key2}</strong> = ${value2}</p>
+                    <p class='magpie-response-keypress-header' id='feedback'></p>
+                    <div class='magpie-view-stimulus-container'>
                         <div class='magpie-view-stimulus magpie-nodisplay'></div>
                     </div>
                 </div>`;

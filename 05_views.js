@@ -133,8 +133,8 @@ const practice = custom_views.keypress_special_words({
 
 
 const main = custom_views.keypress_special_words({
-  trials: 384,
-  // trials: 8,
+  // trials: 384,
+  trials: 8,
   name: 'main',
   trial_type: 'main',
   pause: 500,
