@@ -15,7 +15,8 @@ const instructions_practice_1 = magpieViews.view_generator("instructions", {
   title: 'General Instructions',
   text:  `This experiment requires your full visual and auditory attention.
             <br />
-            If you can, please use headphones. If not, make sure to have good audio in some other way.
+            <br />
+            If you can, please use headphones. If not, please make sure that you are in a quiet environment with no background noise.
             <br />
             <br />`,
   buttonText: 'next'
@@ -25,11 +26,16 @@ const instructions_practice_2 = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_practice',
   title: 'General Instructions',
-  text:  `In this experiment you will first hear a sound. This is either a spoken word, the label of an object, or a sound, which is made by an object.
+  text:  `In this experiment you will first hear a sound. This is either the spoken label of an object, or a sound, which is made by an object. For example, you might hear the word "trompet" or hear the sound of a trompet.
             <br />
-            Afterwards you will see a image of an object.
             <br />
-            Decide whether the sound and the image represent the same high-levle-category of an object.
+            After hearing the sound, an image will be presented.
+            <br />
+            <br />
+            Your task is to decide, whether the sound you heard and the image you see represent the same category.
+            <br />
+            <br /> 
+            <strong>As a note of caution:</strong> Sound and image can be of the same category, even if the subcategory of the sound does not match the subcategory represented in the picture. That is, you might hear the sound of an owl and see the picture of a sparrow. Even if the subcategories do not match, both stimuli represent the category "bird".
             <br />
             <br />`,
   buttonText: 'next'
@@ -40,14 +46,18 @@ const instructions_practice_3 = magpieViews.view_generator("instructions", {
   name: 'instructions_practice',
   title: 'General Instructions',
   text:  `
-            If they represent the same high-level-category hit the <strong>y</strong> button.
-            <br />
-            If they represent a different high-level-category hit the <strong>n</strong> button.
-            <br />
-            Please try to answer as quick and accurately as possible!
+            We will start with six practice trials, such that you can familiarize yourself with the task.
             <br />
             <br />
-            We will practice this first.`,
+            Press <strong>y</strong> on your keyboard, if sound and image represent the same category.
+            <br />
+            <br />
+            Press <strong>n</strong>, if they represent different categories.
+            <br />
+            <br />
+            Please try to answer as quickly and accurately as possible!
+            <br />
+            <br />`,
   buttonText: 'go to practice'
 });
 
