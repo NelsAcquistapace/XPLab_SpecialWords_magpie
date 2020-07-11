@@ -62,6 +62,29 @@ const instructions_practice_3 = magpieViews.view_generator("instructions", {
   buttonText: 'go to practice'
 });
 
+const sound_volume_adjustment = magpieViews.view_generator("instructions", {
+  trials: 1,
+  name: 'instructions_practice',
+  title: 'General Instructions',
+  text:  `
+            Please adjust your volume before we start the experiment.
+            <br />
+            <br />
+            To do so, please play the following track and reduce or increase your volume such that you are just able to hear the sound.
+            <br />
+            <br />
+            <audio controls autoplay id="myaudio" loop="true">
+                <source src="feedback_sounds/bleep.wav">
+            </audio>
+            <script>
+                var audio = document.getElementById("myaudio");
+                audio.volume = 0.01;
+            </script>
+            <br />
+            <br />`,
+  buttonText: 'go to practice'
+});
+
 const instructions_main = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_main',
@@ -145,7 +168,7 @@ const practice = custom_views.keypress_special_words({
 
 const main = custom_views.keypress_special_words({
   // trials: 384,
-  trials: 8,
+  trials: 30,
   name: 'main',
   trial_type: 'main',
   pause: 500,

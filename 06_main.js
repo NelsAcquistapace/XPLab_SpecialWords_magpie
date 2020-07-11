@@ -16,6 +16,7 @@ $("document").ready(function() {
         // You have to specify all views you want to use in this experiment and the order of them
         views_seq: [
             intro,
+            sound_volume_adjustment,
             instructions_practice_1,
             instructions_practice_2,
             instructions_practice_3,
@@ -45,7 +46,7 @@ $("document").ready(function() {
             ],
             // Possible styles are "default", "separate" and "chunks"
             style: "separate",
-            width: 100
+            width: 400
         }
     });
 });

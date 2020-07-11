@@ -1,10 +1,19 @@
-// In this file you can specify the trial data for your experiment
+
+
+// ---------- TRIAL CONSTRUCTION -----------------------------------------------------------
+// Here, the trials are constructed. First, arrays containing strings that construct the 
+// source to all images, sounds, and labels are constructed. Then, all possible sound-image 
+// and label-image combinations are built and saved in on of five two-dimensional arrays,
+// that represent the type of combination: congruent or incongruent sound-image combination, 
+// correct label-image combination, incorrect label-image or sound-image combinations. The 
+// described arrays are initialised below.
 
 let correctLabelCombinations = [];
 let congruentSoundCombinations = [];
 let incongruentSoundCombinations = [];
 let incorrectLabelCombinations = [];
 let incorrectSoundCombinations = [];
+
 
 // CREATING ARRAYS THAT CONTAIN STRINGS DESCRIBING PATHS OF ALL LABELS, SOUNDS, AND IMAGES
 
@@ -25,12 +34,14 @@ for (let i1 = 0; i1 < categories.length; i1++) {
     }
 }
 
+
 // Creates Array containing all image paths
 let imagePaths = [];
 for (let j = 0; j < categories.length*4; j++) {
     let cat = Math.round((j/4)-0.5);
     imagePaths.push("images/" + categories[cat] + "_" + subcategory[cat][j%2] + "_" + index[j%4] + ".jpg");
 }
+
 
 // Creates Array containing all sound paths
 let soundPaths = [];
@@ -40,23 +51,24 @@ for (let k1 = 0; k1 < subcategory.length; k1++) {
     }
 }
 
-// Creating the Array "correctLabelCombinations": Contains all matching combinations of
-// labels and images. Every label can be combined with exactly four pictures to create a
-// correct match -> 48 combinations (2 labels per category, 4 pictures per category)
+
+// ---------- CREATES LABEL-IMAGE COMBINATIONS ---------------------------------------------
+// Each label is combined with each image. If they make a valid combination (e.g. label 
+// "dog" and image of a dog), they are added to the array containing all valid combinations 
+// (correctLabelCombinations), else they are added to the array containing all invalid 
+// combinations (incorrectLabelCombinations).
 let x3;
 let x4;
 
-// Find correct combination for each of the labelString-entries:
 for (let x1 = 0; x1 < labelPaths.length; x1++) {
     x3 = Math.round((x1/2)-0.5);
-
-    // TODO das dauert, redundanter code, nochmal drueberschauen fuer bessere Idee
+    
     for (let x2 = 0; x2 < 24; x2++) {
         x4 = Math.round((x2/4)-0.5);
 
-        // if label and image are a "matching" combination, push them to the array
         if (x3 === x4) {
 
+            // all correct label-image combinations (48)
             correctLabelCombinations.push([labelPaths[x1], imagePaths[x2]]);
 
         } else {
@@ -68,7 +80,12 @@ for (let x1 = 0; x1 < labelPaths.length; x1++) {
     }
 }
 
-// creating an array with all congruent sound-image combinations
+// ---------- CREATES SOUND-IMAGE COMBINATIONS --------------------------------------------- 
+// Each sound is combined with each image. If sound and image represent the same category 
+// and they make a congruent combination, they are added to the array congruentSoundCombina-
+// tions. If they represent the same category but are an incongruent combination, they are
+// added to the array incongruentSoundCombinations. If they are neither of the above, sound 
+// and image are not of the same category (add to array incorrectSoundCombinations).
 let imagePosCon;
 let imagePosIncon;
 
@@ -86,12 +103,12 @@ for (let y1 = 0; y1 < soundPaths.length; y1++) {
 
         if (y2 === imagePosCon || y2 === imagePosCon+2) {
 
-            // all congruent combinations
+            // all congruent combinations (24)
             congruentSoundCombinations.push([soundPaths[y1], imagePaths[y2]]);
 
         } else if (y2 === imagePosIncon || y2 === imagePosIncon-2) {
 
-            // all incongruent combinations
+            // all incongruent combinations (24)
             incongruentSoundCombinations.push([soundPaths[y1], imagePaths[y2]]);
 
         } else {
@@ -102,15 +119,21 @@ for (let y1 = 0; y1 < soundPaths.length; y1++) {
     }
 }
 
-// Function that takes an array and shuffles it (this function is used to avoid
-// regularities in the incorrect trials)
+
+// ---------- REDUCE AMOUNT OF INCORRECT COMBINATIONS --------------------------------------
+// In total the arrays "incorrectLabelCombinations" and "incorrectSoundCombinations" each 
+// have 240 entries. To cancel out possible regularities in the incorrect trials (e.g. the 
+// label "dog" is used multiple times but the label "motorcycle" is never used in the in-
+// correct trials), we chose to add all possible combinations first, shuffle the array and 
+// then shorten it to 48 combinations each for incorrect sound-image and label-image combi-
+// nations.
+
+// Function that takes an array and shuffles it.
 function shuffle(array) {
     array.sort(() => Math.random() - 0.5);
 }
 
-// Only 48 incorrect label-image and 48 incorrect sound-image combinations needed.
-// Shuffle arrays (240 entries each) first, then slice such that 48 combinations
-// remain in each array.
+//Shuffle arrays first, then slice such that 48 combinations remain in each array.
 shuffle(incorrectLabelCombinations);
 incorrectLabelCombinations = incorrectLabelCombinations.slice(40,88);
 
@@ -118,46 +141,29 @@ shuffle(incorrectSoundCombinations);
 incorrectSoundCombinations = incorrectSoundCombinations.slice(40,88);
 
 
-// TODO: Das ist nur zum Testen!!
-// ------------------------------------------------------------------------------------
-for(let i = 0; i < incongruentSoundCombinations.length; i++) {
-    //console.log(incongruentSoundCombinations[i]);
-}
-for(let i = 0; i < congruentSoundCombinations.length; i++) {
-    //console.log(congruentSoundCombinations[i]);
-}
-for(let i = 0; i < correctLabelCombinations.length; i++) {
-    //console.log(correctLabelCombinations[i]);
-}
-for(let i = 0; i < incorrectLabelCombinations.length; i++) {
-    //console.log(incorrectLabelCombinations[i]);
-}
-//console.log(congruentSoundCombinations[0][0]);
-//console.log(congruentSoundCombinations[0][1]);
+// ---------- CREATES TRIAL-ARRAYS ---------------------------------------------------------
+// This function takes an two-dimensional array that contains combinations of sounds/labels 
+// and images. Also, info must be given of the type of trial (one of the four options: 
+// congruent, incongruent, label_correct, sound_incorrect or label_incorrect). This info is 
+// required for feedback and later data analysis.
 
-// ------------------------------------------------------------------------------------
-
-// function to create trial-arrays
-const get_trials = function(start, end, array, congruenceInfo) {
+const get_trials = function(array, info) {
     let correctness = "match";
 
     // Change correctness-value if the trial is constructed from one of the array
     // containing non-matching (incorrect) combinations.
-    if (congruenceInfo === "sound_incorrect" || congruenceInfo === "label_incorrect") {
+    if (info === "sound_incorrect" || info === "label_incorrect") {
         correctness = "no match";
     }
 
     const trial_array = [];
 
-    for (let i = start; i < end; i++) {
+    for (let i = 0; i < array.length; i++) {
 
-        // Each trial consists of a picture and a sound. The correctness-value is used
-        // for the participant to receive feedback. The information on the congruence
-        // is important for later data analysis.
         var trial = {
             sound: array[i][0],
             picture: array[i][1],
-            congruence: congruenceInfo,
+            info: info,
             expected: correctness,
         };
 
@@ -167,35 +173,33 @@ const get_trials = function(start, end, array, congruenceInfo) {
     return trial_array;
 };
 
-// CONSTRUCT MAIN TRIALS
-// Start by creating trial-arrays for each of the possible "combination-arrays"
-// (different types of congruence, correctness) respectively:
+
+// ---------- CONSTRUCT MAIN TRIALS --------------------------------------------------------
+// Start by creating trial-arrays for each of the possible "combination-arrays" (different 
+// types of congruence, correctness) respectively:
 
 // t1: 24 matching sound-image combinations (congruent)
 // t2: 24 matching sound-image combinations (incongruent)
 // t3: 48 matching label-image combinations
 // t4: 48 non-matching sound-image combinations
 // t5: 48 non-matching label-image combinations
-let t1 = get_trials(0, congruentSoundCombinations.length, congruentSoundCombinations, "congruent");
-let t2 = get_trials(0, incongruentSoundCombinations.length, incongruentSoundCombinations, "incongruent");
-let t3 = get_trials(0, correctLabelCombinations.length, correctLabelCombinations, "label_correct");
-let t4 = get_trials(0, incorrectSoundCombinations.length, incorrectSoundCombinations, "sound_incorrect");
-let t5 = get_trials(0, incorrectLabelCombinations.length, incorrectLabelCombinations, "label_incorrect");
+let t1 = get_trials(congruentSoundCombinations, "congruent");
+let t2 = get_trials(incongruentSoundCombinations, "incongruent");
+let t3 = get_trials(correctLabelCombinations, "label_correct");
+let t4 = get_trials(incorrectSoundCombinations, "sound_incorrect");
+let t5 = get_trials(incorrectLabelCombinations, "label_incorrect");
 
 // Merge all possible combinations. This creates an array with 192 different trials.
 let trials = t1.concat(t2.concat(t3.concat(t4.concat(t5))));
 
-// Each combination is tested twice. Therefore, concatenate trials with itself. This
-// constructs 384 trials.
+// Each combination is tested twice. Therefore, concatenate trials with itself. This con-
+// structs in total 384 trials.
 trials = trials.concat(trials);
 
 
-//console.log(trials.length);
-
-
-// CONSTRUCT PRACTICE TRIALS
-// Takes trial-info from previously defined trial-arrays t1-t5. Practice trials should
-// include 3 matching combinations and 3 non-matching combinations.
+// ---------- CONSTRUCT PRACTICE TRIALS ----------------------------------------------------
+// Takes trial-info from previously defined trial-arrays t1-t5. Practice trials include 3 
+// matching combinations and 3 non-matching combinations.
 let practice_trials = [t1[0], t2[0], t3[0], t4[0], t5[0], t5[5]];
 
 
