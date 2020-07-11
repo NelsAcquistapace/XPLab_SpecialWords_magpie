@@ -16,8 +16,9 @@ const instructions_practice_1 = magpieViews.view_generator("instructions", {
   text:  `This experiment requires your full visual and auditory attention.
             <br />
             <br />
-            If you can, please use headphones. If not, please make sure that you are in a quiet environment with no background noise.
+            If you can, please use headphones. Also, please make sure that you are in a quiet environment with no background noise.
             <br />
+            PLease adjust your volume during the practice trials.
             <br />`,
   buttonText: 'next'
 });
@@ -34,7 +35,7 @@ const instructions_practice_2 = magpieViews.view_generator("instructions", {
             <br />
             Your task is to decide, whether the sound you heard and the image you see represent the same category.
             <br />
-            <br /> 
+            <br />
             <strong>As a note of caution:</strong> Sound and image can be of the same category, even if the subcategory of the sound does not match the subcategory represented in the picture. That is, you might hear the sound of an owl and see the picture of a sparrow. Even if the subcategories do not match, both stimuli represent the category "bird".
             <br />
             <br />`,

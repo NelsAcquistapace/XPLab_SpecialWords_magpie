@@ -140,19 +140,19 @@ for(let i = 0; i < incorrectLabelCombinations.length; i++) {
 // function to create trial-arrays
 const get_trials = function(start, end, array, congruenceInfo) {
     let correctness = "match";
-    
-    // Change correctness-value if the trial is constructed from one of the array 
+
+    // Change correctness-value if the trial is constructed from one of the array
     // containing non-matching (incorrect) combinations.
     if (congruenceInfo === "sound_incorrect" || congruenceInfo === "label_incorrect") {
         correctness = "no match";
     }
-    
+
     const trial_array = [];
 
     for (let i = start; i < end; i++) {
 
-        // Each trial consists of a picture and a sound. The correctness-value is used 
-        // for the participant to receive feedback. The information on the congruence 
+        // Each trial consists of a picture and a sound. The correctness-value is used
+        // for the participant to receive feedback. The information on the congruence
         // is important for later data analysis.
         var trial = {
             sound: array[i][0],
@@ -167,8 +167,8 @@ const get_trials = function(start, end, array, congruenceInfo) {
     return trial_array;
 };
 
-// CONSTRUCT MAIN TRIALS 
-// Start by creating trial-arrays for each of the possible "combination-arrays" 
+// CONSTRUCT MAIN TRIALS
+// Start by creating trial-arrays for each of the possible "combination-arrays"
 // (different types of congruence, correctness) respectively:
 
 // t1: 24 matching sound-image combinations (congruent)
@@ -185,7 +185,7 @@ let t5 = get_trials(0, incorrectLabelCombinations.length, incorrectLabelCombinat
 // Merge all possible combinations. This creates an array with 192 different trials.
 let trials = t1.concat(t2.concat(t3.concat(t4.concat(t5))));
 
-// Each combination is tested twice. Therefore, concatenate trials with itself. This 
+// Each combination is tested twice. Therefore, concatenate trials with itself. This
 // constructs 384 trials.
 trials = trials.concat(trials);
 
@@ -194,14 +194,14 @@ trials = trials.concat(trials);
 
 
 // CONSTRUCT PRACTICE TRIALS
-// Takes trial-info from previously defined trial-arrays t1-t5. Practice trials should 
+// Takes trial-info from previously defined trial-arrays t1-t5. Practice trials should
 // include 3 matching combinations and 3 non-matching combinations.
 let practice_trials = [t1[0], t2[0], t3[0], t4[0], t5[0], t5[5]];
 
 
 const trial_info = {
-    
+
     practice: practice_trials,
     main: trials,
-    
+
 };

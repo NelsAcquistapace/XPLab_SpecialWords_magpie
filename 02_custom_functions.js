@@ -38,9 +38,6 @@ const generateID = function(len) {
 
 // create a pause ofter the fixation point is shown
 // after this pause the picture will be shown
-// ERROR: theoretical timing is correcly calculated, timing of the output is different though!
-// ERROR: measuring it with the stopwatch is abuot 1500 between sound offset and picture shwon
-
 // slide appears:
 // 500ms pause
 // 250ms fix cross
