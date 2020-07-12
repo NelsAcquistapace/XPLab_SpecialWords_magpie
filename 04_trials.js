@@ -149,11 +149,16 @@ incorrectSoundCombinations = incorrectSoundCombinations.slice(40,88);
 
 const get_trials = function(array, info) {
     let correctness = "match";
+    let cue_type = "sound";
 
     // Change correctness-value if the trial is constructed from one of the array
-    // containing non-matching (incorrect) combinations.
-    if (info === "sound_incorrect" || info === "label_incorrect") {
+    // containing non-matching (incorrect) combinations. Change cue_type if array 
+    // is a label-image combination array.
+    if (info.includes("incorrect")) {
         correctness = "no match";
+    }
+    if (info.includes("label")) {
+        cue_type = "label";
     }
 
     const trial_array = [];
@@ -164,6 +169,7 @@ const get_trials = function(array, info) {
             sound: array[i][0],
             picture: array[i][1],
             info: info,
+            cue_type: cue_type,
             expected: correctness,
         };
 
