@@ -1,5 +1,8 @@
 
-// Every experiment should start with an intro view. Here you can welcome your participants and tell them what the experiment is about
+
+// Intro view: Participants are welcomed to the experiment. They get the information that a German version of the 
+// description can always be found below the horizontal lines. We decided not to tell the participants about the 
+// hypotheses we are testing so that they are not biased when completing the experiment.
 const intro = magpieViews.view_generator("intro", {
   trials: 1,
   name: 'intro',
@@ -15,7 +18,12 @@ const intro = magpieViews.view_generator("intro", {
   buttonText: 'Begin the experiment/ Experiment starten'
 });
 
-// For most tasks, you need instructions views
+
+// The first instructions view serves to ask the participant to get ready for the experiment by getting their 
+// headphones. The sentence: "This experiment requires your full visual and auditory attention" serves to 
+// mentally prepare participants for the experiment condition (as we cannot control for surroundings in the 
+// same way as the original experiment (no lab condition), it is crucial that participant get the feeling 
+// that their answers in this experiment are important (such that they do not participante half-heartedly).
 const instructions_practice_1 = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_practice',
@@ -35,6 +43,8 @@ const instructions_practice_1 = magpieViews.view_generator("instructions", {
   buttonText: 'next/ weiter'
 });
 
+
+// The second instruction view gives more detail about the task the participants have to fulfil.
 const instructions_practice_2 = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_practice',
@@ -66,6 +76,10 @@ const instructions_practice_2 = magpieViews.view_generator("instructions", {
   buttonText: 'next/ weiter'
 });
 
+
+// The third instruction view serves to explain how participants have to give their answers (pressing keys 
+// "y" or "n"). They are also asked to pay attention to their volume and adjust it if necessary. This is 
+// important, because before the main experiment, participants are asked not to change their volume anymore.
 const instructions_practice_3 = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_practice',
@@ -80,7 +94,7 @@ const instructions_practice_3 = magpieViews.view_generator("instructions", {
             Press <strong>n</strong>, if they represent different categories.</span>
             <br />
             <br />
-            Please adjust your volume as of your preference during the practice trials.
+            Please pay attention to the volume and adjust it if necessary.
             <br />
             <br />
             -----------------------------------------------------------------------------------------------
@@ -94,12 +108,15 @@ const instructions_practice_3 = magpieViews.view_generator("instructions", {
             Bitte drücken Sie <strong>n</strong>, wenn diese unterschiedlichen Oberkategorien angehören.</span>
             <br />
             <br />
-            Bitte stellen Sie außerdem während der Übung ihre Lautstärke für Sie passend ein.
+            Bitte passen Sie, wenn nötig, die Lautstärke Ihres Gerätes während der Übung an.
             <br />`,
   buttonText: 'go to practice/ Übung starten'
 });
 
 
+// These instructions will be shown before the main experiment starts. Partcipants are asked to check their 
+// volume again and not to change it during the experiment. Partcipants are also instructed to answer as 
+// quickly and accurately as possible.
 const instructions_main = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_main',
@@ -107,75 +124,71 @@ const instructions_main = magpieViews.view_generator("instructions", {
   text:  `After having practiced, we will now proceed to the main experiment. Please try to answer as quickly and accurately as possible!
             <br />
             <br />
-            Please do not change your volume during the experiment.
+            If you feel like you need to adjust your volume again, please do so now. Do not change the volume during the experiment.
             <br />
             <br />
             -----------------------------------------------------------------------------------------------
             Nachdem Sie nun Gelegenheit hatten, sich mit den grundlegenden Funktionen vertraut zu machen, werden Sie nach drücken des Buttons zum Experiment weitergeleitet. Bitte versuchen Sie, so schnell und präzise wie möglich zu antworten!
             <br />
             <br />
-            Bitte verändern Sie während des Experiments die Lautstärke ihres Gerätes nicht.
+            Falls Sie Ihre Lautstärke noch einmal anpassen möchten, machen Sie das bitte jetzt. Bitte ändern Sie die Lautstärke nicht mehr während des Experiments.
             <br />`,
   buttonText: 'start'
 });
 
 
-// In the post test questionnaire you can ask your participants addtional questions
+// In the post-test survey, participants are free to give optional information. They also get the opportunity 
+// to add further comments on the experiment.
 const postTest = magpieViews.view_generator("post_test", {
   trials: 1,
   name: 'post_test',
-  title: 'Additional information',
-  text: 'Answering the following questions is optional, but your answers will help us analyze our results.'
-
-  // You can change much of what appears here, e.g., to present it in a different language, as follows:
-  // buttonText: 'Weiter',
-  // age_question: 'Alter',
-  // gender_question: 'Geschlecht',
-  // gender_male: 'männlich',
-  // gender_female: 'weiblich',
-  // gender_other: 'divers',
-  // edu_question: 'Höchster Bildungsabschluss',
-  // edu_graduated_high_school: 'Abitur',
-  // edu_graduated_college: 'Hochschulabschluss',
-  // edu_higher_degree: 'Universitärer Abschluss',
-  // languages_question: 'Muttersprache',
-  // languages_more: '(in der Regel die Sprache, die Sie als Kind zu Hause gesprochen haben)',
-  // comments_question: 'Weitere Kommentare'
+  title: 'Additional Information/ Weitere Informationen',
+  text: 'Answering the following questions is optional, but your answers will help us analyze our results.' +
+      '<br />' +
+      '<br />' +
+      '-----------------------------------------------------------------------------------------------' +
+      'Die folgenden Angaben sind optional, helfen uns aber bei der Analyse der Ergebnisse.' +
+      '<br />',
+  
+  buttonText: 'Next/ Weiter',
+  age_question: 'Age/ Alter',
+  gender_question: 'Gender/ Geschlecht',
+  gender_male: 'male/ männlich',
+  gender_female: 'female/ weiblich',
+  gender_other: 'divers',
+  edu_question: 'Level of Education/ Höchster Bildungsabschluss',
+  edu_graduated_high_school: 'Graduated High School/ Abitur',
+  edu_graduated_college: 'Graduated College/ Hochschulabschluss',
+  edu_higher_degree: 'Higher Degree/ Universitärer Abschluss',
+  languages_question: 'Native Language/ Muttersprache',
+  languages_more: '(i.e. the language(s) spoken at home when you were a child)' +
+      '<br /> ' +
+      '(in der Regel die Sprache, die Sie als Kind zu Hause gesprochen haben)',
+  comments_question: 'Further Comments/ Weitere Kommentare'
 });
 
-// The 'thanks' view is crucial; never delete it; it submits the results!
+
+// The 'thanks'-view submits the results. Participants are asked to press the button before closing the window 
+// (such that their results are not lost).
 const thanks = magpieViews.view_generator("thanks", {
   trials: 1,
   name: 'thanks',
-  title: 'Thank you for taking part in this experiment!',
-  prolificConfirmText: 'Press the button'
+  title: 'Done!/ Geschafft',
+  text: 'Thank you for taking part in this experiment. Press the button before closing the window!' +
+      '<br />' +
+      '<br />' +
+      '-----------------------------------------------------------------------------------------------' +
+      'Vielen Dank, dass Sie an dem Experiment teilgenommen haben. Bitte drücken Sie auf den Button bevor Sie das Fenster schließen!' +
+      '<br />',
+  prolificConfirmText: 'Press here/ Hier klicken'
 });
 
-/** trial (magpie's Trial Type Views) below
 
- * Obligatory properties
-
- - trials: int - the number of trials this view will appear
- - name: string - the name of the view type as it shall be known to _magpie (e.g. for use with a progress bar)
- - trial_type: string - the name of the trial type as you want it to appear in the submitted data
- - data: array - an array of trial objects
-
- * Optional properties
-
- - pause: number (in ms) - blank screen before the fixation point or stimulus show
- - fix_duration: number (in ms) - blank screen with fixation point in the middle
- - stim_duration: number (in ms) - for how long to have the stimulus on the screen
- More about trial life cycle - https://github.com/magpie-project/magpie-project/blob/master/docs/views.md#trial-views-lifecycle
-
- - hook: object - option to hook and add custom functions to the view
- More about hooks - https://github.com/magpie-project/magpie-project/blob/master/docs/views.md#trial-views-hooks
-
- * All about the properties of trial - https://github.com/magpie-project/magpie-project/blob/master/docs/views.md#properties-of-trial
- */
-
-// Here, we initialize a keyPress task
+// Here, the practice trials are initialised. There are 6 practice trials in total. Participants receive auditory 
+// and visual feedback in the practice trials to familiarise themselves with the feedback sounds. Also, 
+// information on the keys to press is provided.
 const practice = custom_views.keypress_special_words({
-  trials: 6,
+  trials: 1,
   // trials: 2,
   name: 'practice',
   trial_type: 'practice',
@@ -192,9 +205,13 @@ const practice = custom_views.keypress_special_words({
 });
 
 
+// Here, the main trials are initialised. There are 384 trials in total. Each trial (in contrast to the original 
+// experiment) starts with 500ms pause because else, participants might be overwhelmed. For the main trials, only 
+// auditory feedback is given (no visual feedback anymore). Also, the kexs to press are not listed anymore. Apart 
+// from the fixation cross and images, only the progress bar is visible.
 const main = custom_views.keypress_special_words({
   // trials: 384,
-  trials: 30,
+  trials: 1,
   name: 'main',
   trial_type: 'main',
   pause: 500,
@@ -208,6 +225,3 @@ const main = custom_views.keypress_special_words({
   y: "match",
   n: "no match",
 });
-
-// There are many more templates available:
-// forcedChoice, sliderRating, dropdownChoice, testboxInput, ratingScale, imageSelection, sentenceChoice, keyPress, selfPacedReading and selfPacedReading_ratingScale
