@@ -74,13 +74,10 @@ const instructions_practice_3 = magpieViews.view_generator("instructions", {
             We will start with six practice trials, such that you can familiarize yourself with the task.
             <br />
             <br />
-            Press <strong>y</strong> on your keyboard, if sound and image represent the same category.
+            <span style="color: red">Press <strong>y</strong> on your keyboard, if sound and image represent the same category.
             <br />
             <br />
-            Press <strong>n</strong>, if they represent different categories.
-            <br />
-            <br />
-            Please try to answer as quickly and accurately as possible!
+            Press <strong>n</strong>, if they represent different categories.</span>
             <br />
             <br />
             Please adjust your volume as of your preference during the practice trials.
@@ -91,13 +88,10 @@ const instructions_practice_3 = magpieViews.view_generator("instructions", {
             Um sich mit der Aufgabe vertraut zu machen, werden Sie mit einer kurzen Übung beginnen.
             <br />
             <br />
-            Bitte drücken Sie <strong>y</strong> auf Ihrer Tastatur, wenn Geräusch und Bild derselben Oberkategorie angehören.
+            <span style="color: red">Bitte drücken Sie <strong>y</strong> auf Ihrer Tastatur, wenn Geräusch und Bild derselben Oberkategorie angehören.
             <br />
             <br />
-            Bitte drücken Sie <strong>n</strong>, wenn diese unterschiedlichen Oberkategorien angehören.
-            <br />
-            <br />
-            Bitte versuchen Sie, so schnell und präzise wie möglich zu antworten!
+            Bitte drücken Sie <strong>n</strong>, wenn diese unterschiedlichen Oberkategorien angehören.</span>
             <br />
             <br />
             Bitte stellen Sie außerdem während der Übung ihre Lautstärke für Sie passend ein.
@@ -110,8 +104,19 @@ const instructions_main = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_main',
   title: 'Get ready for the main experiment',
-  text:  `After having practiced, we will now proceed to the main experiment. Please try to answer as quickly and accurately as possible!`,
-  buttonText: 'begin'
+  text:  `After having practiced, we will now proceed to the main experiment. Please try to answer as quickly and accurately as possible!
+            <br />
+            <br />
+            Please do not change your volume during the experiment.
+            <br />
+            <br />
+            -----------------------------------------------------------------------------------------------
+            Nachdem Sie nun Gelegenheit hatten, sich mit den grundlegenden Funktionen vertraut zu machen, werden Sie nach drücken des Buttons zum Experiment weitergeleitet. Bitte versuchen Sie, so schnell und präzise wie möglich zu antworten!
+            <br />
+            <br />
+            Bitte verändern Sie während des Experiments die Lautstärke ihres Gerätes nicht.
+            <br />`,
+  buttonText: 'start'
 });
 
 
