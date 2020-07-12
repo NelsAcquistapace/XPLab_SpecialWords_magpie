@@ -1,4 +1,7 @@
-// In this file you initialize and configure your experiment using magpieInit
+
+// ---------- INITIALISATION AND CONFIGURATION ---------------------------------------------
+// Here, the experiment is initialised and configured using magpieInit.
+
 
 $("document").ready(function() {
     // prevent scrolling when space is pressed
@@ -45,6 +48,8 @@ $("document").ready(function() {
             ],
             // Possible styles are "default", "separate" and "chunks"
             style: "separate",
+            // progress bar width is adjusted because else the progress shown for the main trials (384) would 
+            // not be visible nicely
             width: 400
         }
     });
