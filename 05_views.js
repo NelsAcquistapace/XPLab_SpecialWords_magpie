@@ -234,7 +234,7 @@ const practice = custom_views.keypress_special_words_practice({
 // from the fixation cross and images, only the progress bar is visible.
 const main = custom_views.keypress_special_words_main({
   // trials: 384,
-  trials: 10,
+  trials: 20,
   name: 'main',
   trial_type: 'main',
   pause: 500,
