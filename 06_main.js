@@ -19,6 +19,7 @@ $("document").ready(function() {
         // You have to specify all views you want to use in this experiment and the order of them
         views_seq: [
             intro,
+            consent_form,
             instructions_practice_1,
             instructions_practice_2,
             instructions_practice_3,
@@ -48,7 +49,7 @@ $("document").ready(function() {
             ],
             // Possible styles are "default", "separate" and "chunks"
             style: "separate",
-            // progress bar width is adjusted because else the progress shown for the main trials (384) would 
+            // progress bar width is adjusted because else the progress shown for the main trials (384) would
             // not be visible nicely
             width: 400
         }

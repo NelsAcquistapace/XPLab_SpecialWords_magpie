@@ -1,3 +1,7 @@
+// <a href="materials/consent_form.md">Quora profile link for Adam D'Angelo</a>
+
+
+
 
 // ---------- VIEWS INITIALISATION ---------------------------------------------------------
 // Here, the views are initialised. That is, an intro view, three instruction views before
@@ -24,6 +28,22 @@ const intro = magpieViews.view_generator("intro", {
   buttonText: 'Begin the experiment/ Experiment starten'
 });
 
+const consent_form = magpieViews.view_generator("instructions", {
+  trials: 1,
+  name: 'instructions_practice',
+  title: 'General Instructions/ Allgemeine Anweisungen',
+  text:  `Consent form / Einverständniserklärung
+            <br />
+            The following
+            <a href="materials/consent_form.md" target="popup" onclick="window.open('materials/consent_form.md','consent form','width=1000,height=600')">link</a>
+            brings you to our consentform. If you continue with this experiment, you automatically ageeing to the consent form.
+            <br/>
+            <br/>
+            -----------------------------------------------------------------------------------------------
+            Dieser <a href="materials/consent_form.md" target="popup" onclick="window.open('materials/consent_form.md','consent form','width=1000,height=600')">link</a>
+            bringt Sie zu unserer Einverständniserklärung. Dieser stimmen sie automatisch zu wenn sie mit dem Experiment fortfhren sollten.`,
+  buttonText: 'next/ weiter'
+});
 
 // The first instructions view serves to ask the participant to get ready for the experiment by getting their
 // headphones. The sentence: "This experiment requires your full visual and auditory attention" serves to
