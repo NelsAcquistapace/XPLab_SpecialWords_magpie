@@ -194,7 +194,7 @@ const thanks = magpieViews.view_generator("thanks", {
 // Here, the practice trials are initialised. There are 6 practice trials in total. Participants receive auditory
 // and visual feedback in the practice trials to familiarise themselves with the feedback sounds. Also,
 // information on the keys to press is provided.
-const practice = custom_views.keypress_special_words({
+const practice = custom_views.keypress_special_words_practice({
   trials: 6,
   // trials: 2,
   name: 'practice',

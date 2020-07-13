@@ -1,12 +1,14 @@
-// In this file you can create your own custom view templates
+// In this file The custom templates are created for the prectice as well as the main trials
 
 // First we create a custom_views object
 const custom_views = {};
 
-// We can now add view templates to our custom_views object
 
 // Custom view template for practice trials
-custom_views.keypress_special_words = function(config) {
+// forced binary choice using keypress response
+// feedback is given via audio and text
+// key bindings are shown
+custom_views.keypress_special_words_practice = function(config) {
     const keypress_special_words_function = {
         name: config.name,
         title: magpieUtils.view.setter.title(config.title, ""),
@@ -20,16 +22,14 @@ custom_views.keypress_special_words = function(config) {
             const value1 = config[key1];
             const value2 = config[key2];
 
-            // -------------------------------------------
             // sound will be played 750ms after a new view is showing
-            // this is exactly after when die fixation cross (duration 250ms + pause 500ms) disappears
+            // this is exactly the offset of the  fixation cross (duration 250ms + pause 500ms)
             setTimeout(() => {
               var audio = new Audio(config.data[CT].sound);
               if (config.data[CT].sound !== undefined) {
                   audio.play();
               }
             }, 750);
-            // -------------------------------------------
 
             const viewTemplate = `<div class="magpie-view">
                     <h1 class='magpie-view-title'>${this.title}</h1>
@@ -54,13 +54,15 @@ custom_views.keypress_special_words = function(config) {
 
                 if (keyPressed === key1 || keyPressed === key2) {
                     let correctness;
-                    // -------------------------------------------
-                    // subtract 2350ms from return
+
+                    // Reaction time is calculated here,
+                    // Time between onset of the image till response.
+                    // Calculation:
+                    // subtract 2350ms from RT
                     // 500ms pause
                     // 250ms fixation cross
                     // 600ms .wav played
                     // 1000ms pause
-                    // -------------------------------------------
                     const RT = Date.now() - startingTime - 2350; // measure RT before anything else
 
                     if (
@@ -159,7 +161,10 @@ custom_views.keypress_special_words = function(config) {
 
 
 
-// custom view template for main trials
+// Custom view template for main trials
+// forced binary choice using keypress response
+// feedback is given via audio
+// key bindings are not shown
 custom_views.keypress_special_words_main = function(config) {
     const keypress_special_words_function = {
         name: config.name,
@@ -174,20 +179,17 @@ custom_views.keypress_special_words_main = function(config) {
             const value1 = config[key1];
             const value2 = config[key2];
 
-            // -------------------------------------------
             // sound will be played 750ms after a new view is showing
-            // this is exactly after when die fixation cross (duration 250ms + pause 500ms) disappears
+            // this is exactly the offset of the  fixation cross (duration 250ms + pause 500ms)
             setTimeout(() => {
               var audio = new Audio(config.data[CT].sound);
               if (config.data[CT].sound !== undefined) {
                   audio.play();
               }
             }, 750);
-            // -------------------------------------------
 
             const viewTemplate = `<div class="magpie-view">
                     <h1 class='magpie-view-title'>${this.title}</h1>
-                    <p class='magpie-response-keypress-header'><strong>${key1}</strong> = ${value1}, <strong>${key2}</strong> = ${value2}</p>
                     <p class='magpie-response-keypress-header' id='feedback'></p>
                     <div class='magpie-view-stimulus-container'>
                         <div class='magpie-view-stimulus magpie-nodisplay'></div>
@@ -208,13 +210,15 @@ custom_views.keypress_special_words_main = function(config) {
 
                 if (keyPressed === key1 || keyPressed === key2) {
                     let correctness;
-                    // -------------------------------------------
-                    // subtract 2350ms from return
+
+                    // Reaction time is calculated here,
+                    // Time between onset of the image till response.
+                    // Calculation:
+                    // subtract 2350ms from RT
                     // 500ms pause
                     // 250ms fixation cross
                     // 600ms .wav played
                     // 1000ms pause
-                    // -------------------------------------------
                     const RT = Date.now() - startingTime - 2350; // measure RT before anything else
 
                     if (
