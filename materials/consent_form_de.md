@@ -1,6 +1,6 @@
-#Einverständniserklärung
-Bevor Sie an dieser Studie teilnehmen, lesen Sie sich bitte die Einverständniserklärung unten durch und klicken Sie auf "Ich bin einverstanden" am Ende der Seite, wenn Sie die Erklärung verstanden haben und freiwillig zustimmen, an der Studie teilzunehmen.
+Einverständniserklärung
 
+Bevor Sie an dieser Studie teilnehmen, lesen Sie sich bitte die Einverständniserklärung unten durch.
 Einverständnis-Formular
 Bei dieser Studie handelt es sich um ein webbasiertes Experiment und wird von Studierenden der Kognitionswissenschaften an der Universität Osnabrück für die Lehrveranstaltung "Experimental Psychology Lab" durchgeführt. Sie beinhaltet keine Täuschung, und die Studie hat nicht mehr als ein minimales Risiko für die Teilnehmer (d.h. Risiko, dem man im täglichen Leben begegnet).
 

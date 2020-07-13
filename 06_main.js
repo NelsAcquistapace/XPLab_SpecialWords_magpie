@@ -1,4 +1,3 @@
-
 // ---------- INITIALISATION AND CONFIGURATION ---------------------------------------------
 // Here, the experiment is initialised and configured using magpieInit.
 

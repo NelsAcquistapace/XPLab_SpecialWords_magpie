@@ -1,6 +1,6 @@
-#Consent Form
+Consent Form
 
-Before taking part in this study, please read the consent form below and click on the "I Agree" button at the bottom of the page if you understand the statement and freely consent to participate in the study.
+Before taking part in this study, please read the consent form below.
 
 Consent Form
 This study involves a web-based experiment and is conducted by Cognitive Science students at the University of Osnabrück for the course "Experimental Psychology Lab". No deception is involved, and the study involves no  more than minimal risk to participants (i.e., the level of risk encountered in daily life).

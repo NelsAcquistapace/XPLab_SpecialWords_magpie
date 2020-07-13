@@ -1,5 +1,3 @@
-
-
 // ---------- TRIAL CONSTRUCTION -----------------------------------------------------------
 // Here, the trials are constructed. First, arrays containing strings that construct the
 // source to all images, sounds, and labels are constructed. Then, all possible sound-image

@@ -1,8 +1,3 @@
-// <a href="materials/consent_form.md">Quora profile link for Adam D'Angelo</a>
-
-
-
-
 // ---------- VIEWS INITIALISATION ---------------------------------------------------------
 // Here, the views are initialised. That is, an intro view, three instruction views before
 // the practice trials, one instruction view before the main experiment, a post-test survey
@@ -28,18 +23,20 @@ const intro = magpieViews.view_generator("intro", {
   buttonText: 'Begin the experiment/ Experiment starten'
 });
 
+// This view serves to show a consent form to the participants.
+//  due to limited amount of space for text, the two consent forms (eng and ger) are shown in popup windows
 const consent_form = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_practice',
   title: 'Consent form / Einverständniserklärung',
   text:  `
             Please find under the following
-            <a href="materials/consent_form_eng.md" target="popup" onclick="window.open('materials/consent_form.md','consent form','width=1000,height=600')">link</a>
+            <a href="materials/consent_form_eng.md" target="popup" onclick="window.open('materials/consent_form_eng.md','consent form','width=1000,height=600')">link</a>
             the consent form for this experiment. If you continue this experiment by pressing the button "next/ weiter" below, you automatically agree to the consent form.
             <br/>
             <br/>
             -----------------------------------------------------------------------------------------------
-            Dieser <a href="materials/consent_form_de.md" target="popup" onclick="window.open('materials/consent_form.md','consent form','width=1000,height=600')">Link</a>
+            Dieser <a href="materials/consent_form_de.md" target="popup" onclick="window.open('materials/consent_form_de.md','consent form','width=1000,height=600')">Link</a>
             bringt Sie zu der Einverständniserklärung dieses Experiments. Dieser stimmen Sie automatisch zu, wenn Sie auf die Schaltfläche "next/ weiter" drücken und mit dem Experiment fortfahren.`,
   buttonText: 'next/ weiter'
 });
