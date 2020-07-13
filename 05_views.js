@@ -2,7 +2,7 @@
 // Here, the views are initialised. That is, an intro view, three instruction views before
 // the practice trials, one instruction view before the main experiment, a post-test survey
 // view and a thanks view. The trial-views are separated into practice and main and can be
-// found from line 193 onwards.
+// found from line 209 onwards.
 
 
 // Intro view: Participants are welcomed to the experiment. They get the information that a German version of the

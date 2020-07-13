@@ -148,6 +148,8 @@ incorrectSoundCombinations = incorrectSoundCombinations.slice(40,88);
 const get_trials = function(array, info) {
     let correctness = "match";
     let cue_type = "sound";
+    let cue_category;
+    let image_category;
 
     // Change correctness-value if the trial is constructed from one of the array
     // containing non-matching (incorrect) combinations. Change cue_type if array
@@ -162,12 +164,17 @@ const get_trials = function(array, info) {
     const trial_array = [];
 
     for (let i = 0; i < array.length; i++) {
+        
+        cue_category = test(array[i][0]);
+        image_category = test(array[i][1]);
 
         var trial = {
             sound: array[i][0],
             picture: array[i][1],
             info: info,
             cue_type: cue_type,
+            cue_category: cue_category,
+            image_category: image_category,
             expected: correctness,
         };
 
@@ -176,6 +183,20 @@ const get_trials = function(array, info) {
 
     return trial_array;
 };
+
+
+// This function is used to determine cue and image category in each trial. It takes a string and 
+// checks, which of the categories is contained in the image path.
+function test(test_string) {
+    
+    for (let i = 0; i < categories.length; i++) {
+        if (test_string.includes(categories[i])) {
+            return categories[i];
+        }
+    }
+    
+    return "undef";
+}
 
 
 // ---------- CONSTRUCT MAIN TRIALS --------------------------------------------------------
