@@ -31,17 +31,16 @@ const intro = magpieViews.view_generator("intro", {
 const consent_form = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_practice',
-  title: 'General Instructions/ Allgemeine Anweisungen',
-  text:  `Consent form / Einverständniserklärung
-            <br />
-            The following
+  title: 'Consent form / Einverständniserklärung',
+  text:  `
+            Please find under the following
             <a href="materials/consent_form.md" target="popup" onclick="window.open('materials/consent_form.md','consent form','width=1000,height=600')">link</a>
-            brings you to our consentform. If you continue with this experiment, you automatically ageeing to the consent form.
+            the consent form for this experiment. If you continue this experiment by pressing the button "next/ weiter" below, you automatically agree to the consent form.
             <br/>
             <br/>
             -----------------------------------------------------------------------------------------------
-            Dieser <a href="materials/consent_form.md" target="popup" onclick="window.open('materials/consent_form.md','consent form','width=1000,height=600')">link</a>
-            bringt Sie zu unserer Einverständniserklärung. Dieser stimmen sie automatisch zu wenn sie mit dem Experiment fortfhren sollten.`,
+            Dieser <a href="materials/consent_form.md" target="popup" onclick="window.open('materials/consent_form.md','consent form','width=1000,height=600')">Link</a>
+            bringt Sie zu der Einverständniserklärung dieses Experiments. Dieser stimmen Sie automatisch zu, wenn Sie auf die Schaltfläche "next/ weiter" drücken und mit dem Experiment fortfahren.`,
   buttonText: 'next/ weiter'
 });
 
@@ -146,7 +145,7 @@ const instructions_practice_3 = magpieViews.view_generator("instructions", {
 const instructions_main = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_main',
-  title: 'Get ready for the main experiment',
+  title: 'Get ready for the main experiment!/ Das Experiment startet in Kürze!',
   text:  `After having practiced, we will now proceed to the main experiment. Please try to answer as quickly and accurately as possible!
             <br />
             <br />
@@ -154,7 +153,7 @@ const instructions_main = magpieViews.view_generator("instructions", {
             <br />
             <br />
             -----------------------------------------------------------------------------------------------
-            Nachdem Sie nun Gelegenheit hatten, sich mit den grundlegenden Funktionen vertraut zu machen, werden Sie nach drücken des Buttons zum Experiment weitergeleitet. Bitte versuchen Sie, so schnell und präzise wie möglich zu antworten!
+            Nachdem Sie nun Gelegenheit hatten, sich mit den grundlegenden Funktionen vertraut zu machen, werden Sie nach Drücken des Buttons zum Experiment weitergeleitet. Bitte versuchen Sie, so schnell und präzise wie möglich zu antworten!
             <br />
             <br />
             Falls Sie Ihre Lautstärke noch einmal anpassen möchten, machen Sie das bitte jetzt. Bitte ändern Sie die Lautstärke nicht mehr während des Experiments.
