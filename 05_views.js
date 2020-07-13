@@ -212,7 +212,6 @@ const thanks = magpieViews.view_generator("thanks", {
 // information on the keys to press is provided.
 const practice = custom_views.keypress_special_words_practice({
   trials: 6,
-  // trials: 2,
   name: 'practice',
   trial_type: 'practice',
   pause: 500,
@@ -233,8 +232,7 @@ const practice = custom_views.keypress_special_words_practice({
 // auditory feedback is given (no visual feedback anymore). Also, the kexs to press are not listed anymore. Apart
 // from the fixation cross and images, only the progress bar is visible.
 const main = custom_views.keypress_special_words_main({
-  // trials: 384,
-  trials: 20,
+  trials: 384,
   name: 'main',
   trial_type: 'main',
   pause: 500,
