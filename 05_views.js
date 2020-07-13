@@ -34,12 +34,12 @@ const consent_form = magpieViews.view_generator("instructions", {
   title: 'Consent form / Einverständniserklärung',
   text:  `
             Please find under the following
-            <a href="materials/consent_form.md" target="popup" onclick="window.open('materials/consent_form.md','consent form','width=1000,height=600')">link</a>
+            <a href="materials/consent_form_eng.md" target="popup" onclick="window.open('materials/consent_form.md','consent form','width=1000,height=600')">link</a>
             the consent form for this experiment. If you continue this experiment by pressing the button "next/ weiter" below, you automatically agree to the consent form.
             <br/>
             <br/>
             -----------------------------------------------------------------------------------------------
-            Dieser <a href="materials/consent_form.md" target="popup" onclick="window.open('materials/consent_form.md','consent form','width=1000,height=600')">Link</a>
+            Dieser <a href="materials/consent_form_de.md" target="popup" onclick="window.open('materials/consent_form.md','consent form','width=1000,height=600')">Link</a>
             bringt Sie zu der Einverständniserklärung dieses Experiments. Dieser stimmen Sie automatisch zu, wenn Sie auf die Schaltfläche "next/ weiter" drücken und mit dem Experiment fortfahren.`,
   buttonText: 'next/ weiter'
 });
