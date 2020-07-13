@@ -1,13 +1,13 @@
 
 // ---------- VIEWS INITIALISATION ---------------------------------------------------------
-// Here, the views are initialised. That is, an intro view, three instruction views before 
-// the practice trials, one instruction view before the main experiment, a post-test survey 
-// view and a thanks view. The trial-views are separated into practice and main and can be 
+// Here, the views are initialised. That is, an intro view, three instruction views before
+// the practice trials, one instruction view before the main experiment, a post-test survey
+// view and a thanks view. The trial-views are separated into practice and main and can be
 // found from line 193 onwards.
 
 
-// Intro view: Participants are welcomed to the experiment. They get the information that a German version of the 
-// description can always be found below the horizontal lines. We decided not to tell the participants about the 
+// Intro view: Participants are welcomed to the experiment. They get the information that a German version of the
+// description can always be found below the horizontal lines. We decided not to tell the participants about the
 // hypotheses we are testing so that they are not biased when completing the experiment.
 const intro = magpieViews.view_generator("intro", {
   trials: 1,
@@ -25,10 +25,10 @@ const intro = magpieViews.view_generator("intro", {
 });
 
 
-// The first instructions view serves to ask the participant to get ready for the experiment by getting their 
-// headphones. The sentence: "This experiment requires your full visual and auditory attention" serves to 
-// mentally prepare participants for the experiment condition (as we cannot control for surroundings in the 
-// same way as the original experiment (no lab condition), it is crucial that participant get the feeling 
+// The first instructions view serves to ask the participant to get ready for the experiment by getting their
+// headphones. The sentence: "This experiment requires your full visual and auditory attention" serves to
+// mentally prepare participants for the experiment condition (as we cannot control for surroundings in the
+// same way as the original experiment (no lab condition), it is crucial that participant get the feeling
 // that their answers in this experiment are important (such that they do not participante half-heartedly).
 const instructions_practice_1 = magpieViews.view_generator("instructions", {
   trials: 1,
@@ -83,8 +83,8 @@ const instructions_practice_2 = magpieViews.view_generator("instructions", {
 });
 
 
-// The third instruction view serves to explain how participants have to give their answers (pressing keys 
-// "y" or "n"). They are also asked to pay attention to their volume and adjust it if necessary. This is 
+// The third instruction view serves to explain how participants have to give their answers (pressing keys
+// "y" or "n"). They are also asked to pay attention to their volume and adjust it if necessary. This is
 // important, because before the main experiment, participants are asked not to change their volume anymore.
 const instructions_practice_3 = magpieViews.view_generator("instructions", {
   trials: 1,
@@ -120,8 +120,8 @@ const instructions_practice_3 = magpieViews.view_generator("instructions", {
 });
 
 
-// These instructions will be shown before the main experiment starts. Partcipants are asked to check their 
-// volume again and not to change it during the experiment. Partcipants are also instructed to answer as 
+// These instructions will be shown before the main experiment starts. Partcipants are asked to check their
+// volume again and not to change it during the experiment. Partcipants are also instructed to answer as
 // quickly and accurately as possible.
 const instructions_main = magpieViews.view_generator("instructions", {
   trials: 1,
@@ -143,7 +143,7 @@ const instructions_main = magpieViews.view_generator("instructions", {
 });
 
 
-// In the post-test survey, participants are free to give optional information. They also get the opportunity 
+// In the post-test survey, participants are free to give optional information. They also get the opportunity
 // to add further comments on the experiment.
 const postTest = magpieViews.view_generator("post_test", {
   trials: 1,
@@ -155,7 +155,7 @@ const postTest = magpieViews.view_generator("post_test", {
       '-----------------------------------------------------------------------------------------------' +
       'Die folgenden Angaben sind optional, helfen uns aber bei der Analyse der Ergebnisse.' +
       '<br />',
-  
+
   buttonText: 'Next/ Weiter',
   age_question: 'Age/ Alter',
   gender_question: 'Gender/ Geschlecht',
@@ -174,7 +174,7 @@ const postTest = magpieViews.view_generator("post_test", {
 });
 
 
-// The 'thanks'-view submits the results. Participants are asked to press the button before closing the window 
+// The 'thanks'-view submits the results. Participants are asked to press the button before closing the window
 // (such that their results are not lost).
 const thanks = magpieViews.view_generator("thanks", {
   trials: 1,
@@ -191,11 +191,11 @@ const thanks = magpieViews.view_generator("thanks", {
 
 
 // ---------- TRIAL VIEWS ------------------------------------------------------------------
-// Here, the practice trials are initialised. There are 6 practice trials in total. Participants receive auditory 
-// and visual feedback in the practice trials to familiarise themselves with the feedback sounds. Also, 
+// Here, the practice trials are initialised. There are 6 practice trials in total. Participants receive auditory
+// and visual feedback in the practice trials to familiarise themselves with the feedback sounds. Also,
 // information on the keys to press is provided.
 const practice = custom_views.keypress_special_words({
-  trials: 1,
+  trials: 6,
   // trials: 2,
   name: 'practice',
   trial_type: 'practice',
@@ -212,13 +212,13 @@ const practice = custom_views.keypress_special_words({
 });
 
 
-// Here, the main trials are initialised. There are 384 trials in total. Each trial (in contrast to the original 
-// experiment) starts with 500ms pause because else, participants might be overwhelmed. For the main trials, only 
-// auditory feedback is given (no visual feedback anymore). Also, the kexs to press are not listed anymore. Apart 
+// Here, the main trials are initialised. There are 384 trials in total. Each trial (in contrast to the original
+// experiment) starts with 500ms pause because else, participants might be overwhelmed. For the main trials, only
+// auditory feedback is given (no visual feedback anymore). Also, the kexs to press are not listed anymore. Apart
 // from the fixation cross and images, only the progress bar is visible.
-const main = custom_views.keypress_special_words({
+const main = custom_views.keypress_special_words_main({
   // trials: 384,
-  trials: 1,
+  trials: 10,
   name: 'main',
   trial_type: 'main',
   pause: 500,
