@@ -226,10 +226,12 @@ custom_views.keypress_special_words_main = function(config) {
                         config[keyPressed]
                     ) {
                         correctness = "correct";
+                        $(".magpie-view-stimulus").addClass("magpie-invisible");
                         var audio = new Audio("materials/feedback_sounds/bleep.wav");
                         audio.play();
                     } else {
                         correctness = "incorrect";
+                        $(".magpie-view-stimulus").addClass("magpie-invisible");
                         var audio = new Audio("materials/feedback_sounds/buzz.wav");
                         audio.play();
                     }
