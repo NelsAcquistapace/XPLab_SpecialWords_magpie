@@ -72,7 +72,7 @@ custom_views.keypress_special_words = function(config) {
                         // feedpack sound is heard in practice and main trials
                         $(".magpie-view-stimulus").addClass("magpie-invisible");
                         $('#feedback').text('Correct!');
-                        var audio = new Audio("feedback_sounds/bleep.wav");
+                        var audio = new Audio("materials/feedback_sounds/bleep.wav");
                         audio.play();
                     } else {
                         correctness = "incorrect";
@@ -80,7 +80,7 @@ custom_views.keypress_special_words = function(config) {
                         // feedpack sound is heard in practice and main trials
                         $(".magpie-view-stimulus").addClass("magpie-invisible");
                         $('#feedback').text('Incorrect!');
-                        var audio = new Audio("feedback_sounds/buzz.wav");
+                        var audio = new Audio("materials/feedback_sounds/buzz.wav");
                         audio.play();
                     }
 
@@ -222,11 +222,11 @@ custom_views.keypress_special_words_main = function(config) {
                         config[keyPressed]
                     ) {
                         correctness = "correct";
-                        var audio = new Audio("feedback_sounds/bleep.wav");
+                        var audio = new Audio("materials/feedback_sounds/bleep.wav");
                         audio.play();
                     } else {
                         correctness = "incorrect";
-                        var audio = new Audio("feedback_sounds/buzz.wav");
+                        var audio = new Audio("materials/feedback_sounds/buzz.wav");
                         audio.play();
                     }
 

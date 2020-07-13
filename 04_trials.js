@@ -1,11 +1,11 @@
 
 
 // ---------- TRIAL CONSTRUCTION -----------------------------------------------------------
-// Here, the trials are constructed. First, arrays containing strings that construct the 
-// source to all images, sounds, and labels are constructed. Then, all possible sound-image 
+// Here, the trials are constructed. First, arrays containing strings that construct the
+// source to all images, sounds, and labels are constructed. Then, all possible sound-image
 // and label-image combinations are built and saved in on of five two-dimensional arrays,
-// that represent the type of combination: congruent or incongruent sound-image combination, 
-// correct label-image combination, incorrect label-image or sound-image combinations. The 
+// that represent the type of combination: congruent or incongruent sound-image combination,
+// correct label-image combination, incorrect label-image or sound-image combinations. The
 // described arrays are initialised below.
 
 let correctLabelCombinations = [];
@@ -30,7 +30,7 @@ let index = ["1", "1", "2", "2"];
 let labelPaths = [];
 for (let i1 = 0; i1 < categories.length; i1++) {
     for (let i2 = 0; i2 < gender.length; i2++) {
-        labelPaths.push("labels/" + categories[i1] + "_" + gender[i2] + ".wav");
+        labelPaths.push("materials/labels/" + categories[i1] + "_" + gender[i2] + ".wav");
     }
 }
 
@@ -39,7 +39,7 @@ for (let i1 = 0; i1 < categories.length; i1++) {
 let imagePaths = [];
 for (let j = 0; j < categories.length*4; j++) {
     let cat = Math.round((j/4)-0.5);
-    imagePaths.push("images/" + categories[cat] + "_" + subcategory[cat][j%2] + "_" + index[j%4] + ".jpg");
+    imagePaths.push("materials/images/" + categories[cat] + "_" + subcategory[cat][j%2] + "_" + index[j%4] + ".jpg");
 }
 
 
@@ -47,22 +47,22 @@ for (let j = 0; j < categories.length*4; j++) {
 let soundPaths = [];
 for (let k1 = 0; k1 < subcategory.length; k1++) {
     for (let k2 = 0; k2 < subcategory[k1].length; k2++){
-        soundPaths.push("sounds/" + categories[k1] + "_" + subcategory[k1][k2] + ".wav");
+        soundPaths.push("materials/sounds/" + categories[k1] + "_" + subcategory[k1][k2] + ".wav");
     }
 }
 
 
 // ---------- CREATES LABEL-IMAGE COMBINATIONS ---------------------------------------------
-// Each label is combined with each image. If they make a valid combination (e.g. label 
-// "dog" and image of a dog), they are added to the array containing all valid combinations 
-// (correctLabelCombinations), else they are added to the array containing all invalid 
+// Each label is combined with each image. If they make a valid combination (e.g. label
+// "dog" and image of a dog), they are added to the array containing all valid combinations
+// (correctLabelCombinations), else they are added to the array containing all invalid
 // combinations (incorrectLabelCombinations).
 let x3;
 let x4;
 
 for (let x1 = 0; x1 < labelPaths.length; x1++) {
     x3 = Math.round((x1/2)-0.5);
-    
+
     for (let x2 = 0; x2 < 24; x2++) {
         x4 = Math.round((x2/4)-0.5);
 
@@ -80,11 +80,11 @@ for (let x1 = 0; x1 < labelPaths.length; x1++) {
     }
 }
 
-// ---------- CREATES SOUND-IMAGE COMBINATIONS --------------------------------------------- 
-// Each sound is combined with each image. If sound and image represent the same category 
+// ---------- CREATES SOUND-IMAGE COMBINATIONS ---------------------------------------------
+// Each sound is combined with each image. If sound and image represent the same category
 // and they make a congruent combination, they are added to the array congruentSoundCombina-
 // tions. If they represent the same category but are an incongruent combination, they are
-// added to the array incongruentSoundCombinations. If they are neither of the above, sound 
+// added to the array incongruentSoundCombinations. If they are neither of the above, sound
 // and image are not of the same category (add to array incorrectSoundCombinations).
 let imagePosCon;
 let imagePosIncon;
@@ -121,10 +121,10 @@ for (let y1 = 0; y1 < soundPaths.length; y1++) {
 
 
 // ---------- REDUCE AMOUNT OF INCORRECT COMBINATIONS --------------------------------------
-// In total the arrays "incorrectLabelCombinations" and "incorrectSoundCombinations" each 
-// have 240 entries. To cancel out possible regularities in the incorrect trials (e.g. the 
+// In total the arrays "incorrectLabelCombinations" and "incorrectSoundCombinations" each
+// have 240 entries. To cancel out possible regularities in the incorrect trials (e.g. the
 // label "dog" is used multiple times but the label "motorcycle" is never used in the in-
-// correct trials), we chose to add all possible combinations first, shuffle the array and 
+// correct trials), we chose to add all possible combinations first, shuffle the array and
 // then shorten it to 48 combinations each for incorrect sound-image and label-image combi-
 // nations.
 
@@ -142,9 +142,9 @@ incorrectSoundCombinations = incorrectSoundCombinations.slice(40,88);
 
 
 // ---------- CREATES TRIAL-ARRAYS ---------------------------------------------------------
-// This function takes an two-dimensional array that contains combinations of sounds/labels 
-// and images. Also, info must be given of the type of trial (one of the four options: 
-// congruent, incongruent, label_correct, sound_incorrect or label_incorrect). This info is 
+// This function takes an two-dimensional array that contains combinations of sounds/labels
+// and images. Also, info must be given of the type of trial (one of the four options:
+// congruent, incongruent, label_correct, sound_incorrect or label_incorrect). This info is
 // required for feedback and later data analysis.
 
 const get_trials = function(array, info) {
@@ -152,7 +152,7 @@ const get_trials = function(array, info) {
     let cue_type = "sound";
 
     // Change correctness-value if the trial is constructed from one of the array
-    // containing non-matching (incorrect) combinations. Change cue_type if array 
+    // containing non-matching (incorrect) combinations. Change cue_type if array
     // is a label-image combination array.
     if (info.includes("incorrect")) {
         correctness = "no match";
@@ -181,7 +181,7 @@ const get_trials = function(array, info) {
 
 
 // ---------- CONSTRUCT MAIN TRIALS --------------------------------------------------------
-// Start by creating trial-arrays for each of the possible "combination-arrays" (different 
+// Start by creating trial-arrays for each of the possible "combination-arrays" (different
 // types of congruence, correctness) respectively:
 
 // t1: 24 matching sound-image combinations (congruent)
@@ -204,7 +204,7 @@ trials = trials.concat(trials);
 
 
 // ---------- CONSTRUCT PRACTICE TRIALS ----------------------------------------------------
-// Takes trial-info from previously defined trial-arrays t1-t5. Practice trials include 3 
+// Takes trial-info from previously defined trial-arrays t1-t5. Practice trials include 3
 // matching combinations and 3 non-matching combinations.
 let practice_trials = [t1[0], t2[0], t3[0], t4[0], t5[0], t5[5]];
 

@@ -1,4 +1,4 @@
-## What makes words special?
+# What makes words special?
 # The facilitating role of language
 
 This repository contains the recreated experiment from Edminston and Lupyan (2015).
