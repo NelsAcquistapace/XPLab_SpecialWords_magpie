@@ -3,6 +3,7 @@
 
 This repository contains the recreated experiment from Edminston and Lupyan (2015).
 
+Experiment 1a from the paper:
 Edmiston, P., & Lupyan, G. (2015). What makes words special? Words as unmotivated cues. Cognition, 143, 93-100.
 
 
@@ -19,6 +20,4 @@ This experiment was built using [\_magpie](https://magpie-ea.github.io/magpie-si
 
 ## Running the experiment
 
-1. Online Link: [here](https://magpie-mental-rotation.netlify.com)
-
-2. Offline: Clone the repository, run `npm install` and open `index.html`.
+1. Online Link: [here](hier link einfügen!!!)
