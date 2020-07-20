@@ -53,14 +53,14 @@ const instructions_practice_1 = magpieViews.view_generator("instructions", {
   text:  `This experiment requires your full visual and auditory attention.
             <br />
             <br />
-            If you can, please use headphones. Also, please make sure that you are in a quiet environment with no background noise.
+            This experiment can only be carried out on a device with a keyboard (such as a laptop or computer). Please place yourself comfortably in front of the screen such that the screen is fully visible to you. If you can, please use headphones. Also, please make sure that you are in a quiet environment with no background noise.
             <br />
             <br />
             -----------------------------------------------------------------------------------------------
             Für dieses Experiment ist ihre vollständige Aufmerksamkeit notwendig.
             <br />
             <br />
-            Bitte nutzen Sie Kopfhörer und sorgen Sie für eine ruhige Umgebung.
+            Dieses Experiment kann nur an Geräten mit einer Tastatur durchgeführt werden (Laptop oder Computer). Bitte setzen Sie sich so vor den Bildschirm, dass dieser vollständig in Ihrem Sichtfeld liegt. Bitte nutzen Sie außerdem Kopfhörer und sorgen Sie für eine ruhige Umgebung.
             <br />`,
   buttonText: 'next/ weiter'
 });
