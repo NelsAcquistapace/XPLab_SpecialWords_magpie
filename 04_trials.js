@@ -217,10 +217,6 @@ let t5 = get_trials(incorrectLabelCombinations, "label_incorrect");
 // Merge all possible combinations. This creates an array with 192 different trials.
 let trials = t1.concat(t2.concat(t3.concat(t4.concat(t5))));
 
-// Each combination is tested twice. Therefore, concatenate trials with itself. This con-
-// structs in total 384 trials.
-trials = trials.concat(trials);
-
 
 // ---------- CONSTRUCT PRACTICE TRIALS ----------------------------------------------------
 // Takes trial-info from previously defined trial-arrays t1-t5. Practice trials include 3
