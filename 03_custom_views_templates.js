@@ -24,8 +24,8 @@ custom_views.keypress_special_words_practice = function(config) {
 
             // sound will be played 750ms after a new view is showing
             // this is exactly the offset of the  fixation cross (duration 250ms + pause 500ms)
+            var audio = new Audio(config.data[CT].sound);
             setTimeout(() => {
-              var audio = new Audio(config.data[CT].sound);
               if (config.data[CT].sound !== undefined) {
                   audio.play();
               }
