@@ -176,6 +176,7 @@ const get_trials = function(array, info) {
             cue_category: cue_category,
             image_category: image_category,
             expected: correctness,
+            question: " ",
         };
 
         trial_array.push(trial);
