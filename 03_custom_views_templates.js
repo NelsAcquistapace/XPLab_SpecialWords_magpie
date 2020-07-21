@@ -21,15 +21,7 @@ custom_views.keypress_special_words_practice = function(config) {
             const key2 = config.key2;
             const value1 = config[key1];
             const value2 = config[key2];
-
-            // sound will be played 750ms after a new view is showing
-            // this is exactly the offset of the  fixation cross (duration 250ms + pause 500ms)
-            setTimeout(() => {
-              var audio = new Audio(config.data[CT].sound);
-              if (config.data[CT].sound !== undefined) {
-                  audio.play();
-              }
-            }, 750);
+            
 
             const viewTemplate = `<div class="magpie-view">
                     <h1 class='magpie-view-title'>${this.title}</h1>
@@ -45,6 +37,17 @@ custom_views.keypress_special_words_practice = function(config) {
                           </div>`;
 
             $("#main").html(viewTemplate);
+
+            var audio = new Audio(config.data[CT].sound);
+            if (config.data[CT].sound !== undefined) {
+                audio.load();
+            }
+
+            // sound will be played 750ms after a new view is showing
+            // this is exactly the offset of the fixation cross (duration 250ms + pause 500ms)
+            setTimeout(() => {
+                audio.play();
+            }, 750);
 
 
             const handleKeyPress = function(e) {
