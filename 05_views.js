@@ -198,7 +198,6 @@ const thanks = magpieViews.view_generator("thanks", {
   title: 'Thank you for taking part in this experiment!' +
       '<br />' +
       '<br />' +
-      '-----------------------------------------------------------------------------------------------' +
       'Vielen Dank für Ihre Teilnahme!'
 });
 
