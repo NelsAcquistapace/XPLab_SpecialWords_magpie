@@ -228,7 +228,7 @@ const practice = custom_views.keypress_special_words_practice({
 // auditory feedback is given (no visual feedback anymore). Also, the kexs to press are not listed anymore. Apart
 // from the fixation cross and images, only the progress bar is visible.
 const main = custom_views.keypress_special_words_main({
-  trials: 1,
+  trials: 192,
   name: 'main',
   trial_type: 'main',
   pause: 500,
