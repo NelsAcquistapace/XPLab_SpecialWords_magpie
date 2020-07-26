@@ -18,6 +18,7 @@ $("document").ready(function() {
         // You have to specify all views you want to use in this experiment and the order of them
         views_seq: [
             intro,
+            not_sarafi_it_is_evil,
             consent_form,
             instructions_practice_1,
             instructions_practice_2,

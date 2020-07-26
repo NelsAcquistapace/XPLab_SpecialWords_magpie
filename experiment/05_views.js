@@ -23,6 +23,26 @@ const intro = magpieViews.view_generator("intro", {
   buttonText: 'Begin the experiment/ Experiment starten'
 });
 
+
+
+
+
+const not_sarafi_it_is_evil = magpieViews.view_generator("instructions", {
+  trials: 1,
+  name: 'instructions_practice',
+  title: 'Do not use Safari/ Bitte verwenden Sie nicht Safari',
+  text:  `
+            Do to occuring difficulties, please do not use the Safari Browser (Apple) for this experiment.
+            Other browser, like chrome, are ok.
+            <br/>
+            <br/>
+            -----------------------------------------------------------------------------------------------
+            Da es schwierigkeiten mit dem Safari Browser (Apple) gibt, bitten wir Sie diesen nicht zu nutzen.
+            Andere Brwoser, wie zum Beispiel Chrome, funktionieren einwandfrei`,
+  buttonText: 'next/ weiter'
+});
+
+
 // This view serves to show a consent form to the participants.
 //  due to limited amount of space for text, the two consent forms (eng and ger) are shown in popup windows
 const consent_form = magpieViews.view_generator("instructions", {
