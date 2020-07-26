@@ -23,10 +23,6 @@ const intro = magpieViews.view_generator("intro", {
   buttonText: 'Begin the experiment/ Experiment starten'
 });
 
-
-
-
-
 const not_sarafi_it_is_evil = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_practice',
