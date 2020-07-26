@@ -28,13 +28,11 @@ const not_sarafi_it_is_evil = magpieViews.view_generator("instructions", {
   name: 'instructions_practice',
   title: 'Do not use Safari/ Bitte verwenden Sie nicht Safari',
   text:  `
-            Do to occuring difficulties, please do not use the Safari Browser (Apple) for this experiment.
-            Other browser, like chrome, are ok.
+            Due to occuring difficulties, please do not use the Safari Browser (Apple) for this experiment.
             <br/>
             <br/>
             -----------------------------------------------------------------------------------------------
-            Da es schwierigkeiten mit dem Safari Browser (Apple) gibt, bitten wir Sie diesen nicht zu nutzen.
-            Andere Brwoser, wie zum Beispiel Chrome, funktionieren einwandfrei`,
+            Da es Schwierigkeiten mit dem Safari Browser (Apple) gibt, bitten wir Sie diesen nicht zu nutzen.`,
   buttonText: 'next/ weiter'
 });
 
