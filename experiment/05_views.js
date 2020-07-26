@@ -23,16 +23,16 @@ const intro = magpieViews.view_generator("intro", {
   buttonText: 'Begin the experiment/ Experiment starten'
 });
 
-const not_sarafi_it_is_evil = magpieViews.view_generator("instructions", {
+const browser_note = magpieViews.view_generator("instructions", {
   trials: 1,
   name: 'instructions_practice',
-  title: 'Do not use Safari/ Bitte verwenden Sie nicht Safari',
+  title: 'Do not use Safari/ Bitte verwenden Sie nicht Safari!',
   text:  `
-            Due to occuring difficulties, please do not use the Safari Browser (Apple) for this experiment.
+            Due to recurring difficulties with the Safari browser (Apple), please participate in this experiment using a different browser.
             <br/>
             <br/>
             -----------------------------------------------------------------------------------------------
-            Da es Schwierigkeiten mit dem Safari Browser (Apple) gibt, bitten wir Sie diesen nicht zu nutzen.`,
+            Da es Schwierigkeiten mit dem Safari Browser (Apple) gibt, bitten wir Sie über einen anderen Browser am Experiment teilzunehmen.`,
   buttonText: 'next/ weiter'
 });
 
