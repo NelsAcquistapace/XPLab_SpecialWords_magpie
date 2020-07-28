@@ -4,8 +4,6 @@
 
 The original paper can be found [here](http://sapir.psych.wisc.edu/papers/edmiston_lupyan_2015_motivated.pdf).
 
-The paper on the replication can be found [hier Link einfügen]
-
 
 ## Experiment
 
@@ -26,8 +24,8 @@ This folder contains the anonymized data of the pilot study as well as the main 
 
 This folder contains
 
-* the experimental design plan can be found [here](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Experimental%20Design/Experimental%20Design_The%20Facilitating%20Role%20of%20Language.pdf).
+* the [experimental design plan](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Experimental%20Design/Experimental%20Design_The%20Facilitating%20Role%20of%20Language.pdf).
 
-* the preregistration report can be found [here](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Experimental%20Design/Preregistration%20Report.pdf).
+* the [preregistration report](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Experimental%20Design/Preregistration%20Report.pdf).
 
-* the final paper on the replication study can be found [hier Link einfügen]
+* the [final paper on the replication study] hier noch Link einfügen
