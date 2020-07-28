@@ -24,10 +24,10 @@ This folder contains the anonymized data of the pilot study as well as the main 
 
 ## Writing
 
-Contains:
+This folder contains
 
-The experimental design plan can be found [here](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Experimental%20Design/Experimental%20Design_The%20Facilitating%20Role%20of%20Language.pdf).
+* the experimental design plan can be found [here](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Experimental%20Design/Experimental%20Design_The%20Facilitating%20Role%20of%20Language.pdf).
 
-The preregistration report can be found [here](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Experimental%20Design/Preregistration%20Report.pdf).
+* the preregistration report can be found [here](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Experimental%20Design/Preregistration%20Report.pdf).
 
-The final paper on the replication study can be found [hier Link einfügen]
+* the final paper on the replication study can be found [hier Link einfügen]
