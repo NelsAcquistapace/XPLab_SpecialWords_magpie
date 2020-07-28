@@ -1,4 +1,4 @@
-## What makes words
+## What makes words special?
 #### Recreation of the experiment 1a of the paper:
 ### Edmiston, P., & Lupyan, G. (2015). *What makes words special? Words as unmotivated cues*. Cognition, 143, 93-100.
 
@@ -16,7 +16,7 @@ Run the experiment yourself [here](https://xplab2020-what-makes-words-special.ne
 
 ## Analysis
 
-This folder contains the statistical analysis of the pilot study an well as the main study.
+This folder contains the power analysis and statistical analysis of the pilot study an well as the main study.
 
 
 ## Data
