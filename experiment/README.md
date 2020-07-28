@@ -20,4 +20,4 @@ This experiment was built using [\_magpie](https://magpie-ea.github.io/magpie-si
 
 1. Online Link: [here](https://xplab2020-what-makes-words-special.netlify.app/)
 
-2. Run the experiment locally by cloning the repository, navigating to the folder "experiment", run "npm install" and open the index.html file with the browser of your choice.
+2. Run the experiment locally by cloning the repository, navigate to the folder "experiment", run "npm install" and open the index.html file with the browser of your choice.
