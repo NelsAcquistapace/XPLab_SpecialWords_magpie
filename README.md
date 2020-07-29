@@ -7,7 +7,7 @@ The original paper can be found [here](http://sapir.psych.wisc.edu/papers/edmist
 
 ## Experiment
 
-The experiment folder contains all experiment files for this project. To run the experiment locally, clone the repository (in the terminal), navigate to the folder "experiment", run npm install and open the index.html file with the Browser of your choice. To run the experiment online, please follow this [link](https://xplab2020-what-makes-words-special.netlify.app/). The experiment was implemented using the [magpie-departure point](https://github.com/magpie-ea/magpie-departure-point) on hosted on [netlify](https://www.netlify.com/).
+The experiment folder contains all experiment files for this project. To run the experiment locally, clone the repository (in the terminal), navigate to the folder "experiment", run npm install and open the index.html file with the Browser of your choice. To run the experiment online, please follow this [link](https://xplab2020-what-makes-words-special.netlify.app/). The experiment was implemented using the [magpie-departure point](https://github.com/magpie-ea/magpie-departure-point) and hosted on [netlify](https://www.netlify.com/).
 
 
 ## Analysis
