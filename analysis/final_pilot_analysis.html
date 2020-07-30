@@ -568,7 +568,7 @@ results2 &lt;- model_comparison(soundtype, soundtype.simple, &quot;sound_type_nr
 
 # Now we would like to compute the confidence intervals to see how precise the parameter estimation is and how much it could vary if we would repeat the measurements. 
 confidence_int2 &lt;- confint(soundtype, method=&#39;Wald&#39;, level=0.95)[&quot;sound_type_nr&quot;, ]</code></pre>
-<p>Summary of the results of testing for the effects mentioned in hypothesis nr. 1: <br />- the parameter estimation for the factor cue_type is: B = -0.05, (Std. Error: 0.05) 95% CI [-0.15, 0.05] <br />- the calculated p-value is: 0.3364702</p>
+<p>Summary of the results of testing for the effects mentioned in hypothesis nr. 2: <br />- the parameter estimation for the factor sound_type is: B = -0.05, (Std. Error: 0.05) 95% CI [-0.15, 0.05] <br />- the calculated p-value is: 0.3364702</p>
 <p>The reported p-values are not significant, neither for the first model, nor for the latter. Both more complex models using the factors - cue_type or sound_type respectively - as fixed effect to predict the reaction times does not fit the data better than the simpler model. Also the confidence intervals for both models show that the parameter estimation is not clearly negative or clearly positive.</p>
 <p>Since we only have a very small sample size, the results do not let us make a reliable conclusion about the effect of the factors. For more reliable inference we will collect more participants in the follow-up study.</p>
 </div>
