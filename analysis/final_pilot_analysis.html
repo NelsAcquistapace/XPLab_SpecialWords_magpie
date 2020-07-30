@@ -624,7 +624,7 @@ fit_cue_type
 ## scale reduction factor on split chains (at convergence, Rhat = 1).
 
 fit_sound_type &lt;- brm(RT_log ~ sound_type + (1+sound_type|submission_id) + (1|trialID), data_cor_resp[data_cor_resp$cue_type == &#39;sound&#39;,], control = list(adapt_delta = 0.99), seed=1002)
-fit_cue_type
+fit_sound_type
 ##  Family: gaussian 
 ##   Links: mu = identity; sigma = identity 
 ## Formula: RT_log ~ cue_type + (1 + cue_type | submission_id) + (1 | trialID) 
