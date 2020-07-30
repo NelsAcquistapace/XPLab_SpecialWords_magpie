@@ -725,16 +725,16 @@ anim_instr &lt;- compare_groups(category_mod,
                lower = list(&quot;sum_categories&quot; = &quot;animal&quot;))
 
 anim_util &lt;- compare_groups(category_mod,
-               higher = list(&quot;sum_categories&quot; = &quot;animal&quot;),
-               lower = list(&quot;sum_categories&quot; = &quot;util_object&quot;))
+               higher = list(&quot;sum_categories&quot; = &quot;util_object&quot;),
+               lower = list(&quot;sum_categories&quot; = &quot;animal&quot;))
 
 util_instr &lt;- compare_groups(category_mod,
                higher = list(&quot;sum_categories&quot; = &quot;util_object&quot;),
                lower = list(&quot;sum_categories&quot; = &quot;instrument&quot;))
 
 instr_util &lt;- compare_groups(category_mod,
-               higher = list(&quot;sum_categories&quot; = &quot;util_object&quot;),
-               lower = list(&quot;sum_categories&quot; = &quot;instrument&quot;))</code></pre>
+               higher = list(&quot;sum_categories&quot; = &quot;instrument&quot;),
+               lower = list(&quot;sum_categories&quot; = &quot;util_object&quot;))</code></pre>
 <p>The model parameters show that the intercept, which is the animal category is higher than the estimators for instrument and utility object categories. To investigate how likely it is that animal categories lead to a lower reaction time, we use compare_groups().</p>
 <p><br />- In 0.9% of the cases the sound of an animal is faster to recognize then the sound of an instrument. <br />- In 0.11% of the cases the sound of an animal is faster to recognize then the sound of an utility object such as a phone or a motor cycle. <br />- In 0.5% of the cases the sound of an instrument is faster to recognize then the sound of an utility object such as a phone or a motor cycle. <br />- The parameters for animal categories is 6.5 with a confidence interval [5.95, 7.04], so it is very likely that there is an effect on verification speed when having animals as category in comparison to instruments and utility objects. The familiarity with pictures and sounds of animals might be the reason, but also that it is more convenient to connect the sound of an animal with a picture of an animal rather than connecting the sound of an instrument or an utility object with its picture. <br />- The parameter estimation for instrument categories is 0.16, for utility object categories 0.15 and their confidence interval moves around zero, meaning that there is no effect of the two categories on the verification speed.</p>
 <p><br />If we would add more categories to our experimental design this could of course change. Still the result is interesting, because we can say that the lower reaction times for animal categories in congruent sound trials is crucial for the comparison between incongruent and congruent sound trials like we did in hypothesis 1 in the main part of the experiment. Further analysis of the correlation of category and sound type (congruent and incongruent) is conceivable.</p>
