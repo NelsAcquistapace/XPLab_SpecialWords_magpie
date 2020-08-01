@@ -28,4 +28,5 @@ This folder contains
 
 * the [preregistration report](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Preregistration%20Report_The%20Facilitating%20Role%20of%20Language.pdf).
 
-* the [final paper on the replication study](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Final%20Report_The%20Facilitating%20Role%20of%20Language.pdf)
+* the [final paper on the replication study]
+(https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/XP_Lab_Final%20(2).pdf)
