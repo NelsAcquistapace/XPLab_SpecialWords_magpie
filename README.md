@@ -12,20 +12,20 @@ The experiment folder contains all experiment files for this project. To run the
 
 ## Analysis
 
-This folder contains the power analysis and statistical analysis of the pilot study as well as the main study.
+This folder contains the power analysis, and the documents on statistical analyses of the pilot study as well as the main study.
 
 
 ## Data
 
-This folder contains the anonymized data of the pilot study as well as the main study.
+This folder contains the anonymized data of the pilot study, the main study as well as the complete dataset.
 
 
 ## Writing
 
 This folder contains
 
-* the [experimental design plan](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Experimental%20Design/Experimental%20Design_The%20Facilitating%20Role%20of%20Language.pdf).
+* the [experimental design plan](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Experimental%20Design_The%20Facilitating%20Role%20of%20Language.pdf).
 
-* the [preregistration report](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Experimental%20Design/Preregistration%20Report.pdf).
+* the [preregistration report](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Preregistration%20Report_The%20Facilitating%20Role%20of%20Language.pdf).
 
-* the [final paper on the replication study] hier noch Link einfügen
+* the [final paper on the replication study](https://github.com/NelsAcquistapace/XPLab_SpecialWords_magpie/blob/master/writing/Final%20Report_The%20Facilitating%20Role%20of%20Language.pdf)
